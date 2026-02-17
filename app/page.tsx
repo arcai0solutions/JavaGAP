@@ -6,6 +6,7 @@ import Process from '@/components/Process';
 import BusinessExcellence from '@/components/BusinessExcellence';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import CTA from '@/components/CTA';
 
 export default function Home() {
   return (
@@ -18,20 +19,7 @@ export default function Home() {
         <Services />
         <Process />
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to get started?
-            </h2>
-            <p className="text-lg text-slate-400 mb-10">
-              Start building your next project with our modern Next.js starter template.
-            </p>
-            <Button size="lg" className="text-base h-12 px-8">
-              Start Building Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-        </section>
+        <CTA />
       </main>
 
       <Footer />
