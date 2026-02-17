@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/share-img.jpg',
-        width: 1080,
-        height: 1350,
+        width: 1200,
+        height: 630,
         alt: 'Java Global Access Platform',
       },
     ],
