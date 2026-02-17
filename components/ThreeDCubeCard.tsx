@@ -86,22 +86,22 @@ const ThreeDCubeCard = () => {
                     The HTML provided `srcset` images. I'll use the `src` from the HTML. 
                 */}
                         <div className="cube-face front">
-                            <img src="https://cdn.prod.website-files.com/68ee74b7102caefef6ce7890/68f4fc871aefe1dd0d7594ea_Image_fx%20(7).jpg" className="w-full h-full object-cover" alt="Front" />
+                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Front" />
                         </div>
                         <div className="cube-face back">
-                            <img src="https://cdn.prod.website-files.com/68ee74b7102caefef6ce7890/68f4fc87ae8839f16948c906_Image_fx%20(9).jpg" className="w-full h-full object-cover" alt="Back" />
+                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Back" />
                         </div>
                         <div className="cube-face right">
-                            <img src="https://cdn.prod.website-files.com/68ee74b7102caefef6ce7890/68f4fc8724225a973822fcf5_Image_fx%20(8).jpg" className="w-full h-full object-cover" alt="Right" />
+                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Right" />
                         </div>
                         <div className="cube-face left">
-                            <img src="https://cdn.prod.website-files.com/68ee74b7102caefef6ce7890/68f4fc879634c1188ffa4a4c_Image_fx%20(10).jpg" className="w-full h-full object-cover" alt="Left" />
+                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Left" />
                         </div>
                         <div className="cube-face top">
-                            <img src="https://cdn.prod.website-files.com/68ee74b7102caefef6ce7890/68f4fc87ae8839f16948c906_Image_fx%20(9).jpg" className="w-full h-full object-cover" alt="Top" />
+                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Top" />
                         </div>
                         <div className="cube-face bottom">
-                            <img src="https://cdn.prod.website-files.com/68ee74b7102caefef6ce7890/68f4fc879634c1188ffa4a4c_Image_fx%20(10).jpg" className="w-full h-full object-cover" alt="Bottom" />
+                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Bottom" />
                         </div>
                     </div>
                 </div>

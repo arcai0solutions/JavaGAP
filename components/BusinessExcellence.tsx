@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Lock, ClipboardList, Globe } from 'lucide-react';
+import { ClipboardList, Globe } from 'lucide-react';
 import ThreeDCubeCard from './ThreeDCubeCard';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +13,7 @@ const BusinessExcellence = () => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Refs for animation elements
-    const lockRef = useRef<SVGSVGElement>(null);
+    const lockRef = useRef<HTMLImageElement>(null);
     const workflowRef = useRef<SVGSVGElement>(null);
     const governanceRef = useRef<HTMLDivElement>(null);
     const shippingImageRef = useRef<HTMLImageElement>(null);
@@ -69,16 +69,14 @@ const BusinessExcellence = () => {
                 );
             }
 
-            // Centralized Governance: Nodes Stagger
+            // Centralized Governance: Scale Up Image
             if (governanceRef.current) {
-                const nodes = governanceRef.current.querySelectorAll('.node');
-                gsap.fromTo(nodes,
-                    { scale: 0, opacity: 0 },
+                gsap.fromTo(governanceRef.current.children,
+                    { scale: 0.5, opacity: 0 },
                     {
                         scale: 1,
                         opacity: 1,
-                        duration: 0.5,
-                        stagger: 0.1,
+                        duration: 0.8,
                         ease: "back.out(1.7)",
                         scrollTrigger: { trigger: governanceRef.current, start: "top 80%" }
                     }
@@ -101,7 +99,7 @@ const BusinessExcellence = () => {
     }, []);
 
     return (
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-900" ref={containerRef}>
+        <section className="pt-10 pb-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-900" ref={containerRef}>
             <div className="max-w-7xl mx-auto">
                 <div className="mb-12">
                     <h2 className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white tracking-tight">
@@ -130,12 +128,14 @@ const BusinessExcellence = () => {
                     {/* 2. Secure Digital Operations - (1x2) */}
                     <div className="bento-card col-span-1 md:col-span-1 row-span-2 bg-black text-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden">
                         <div className="flex-1 flex items-center justify-center py-8">
-                            <div className="relative">
+                            <div className="relative w-48 h-48">
                                 <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full"></div>
-                                <Lock
+                                <Image
                                     ref={lockRef}
-                                    className="w-20 h-20 text-blue-400 relative z-10"
-                                    strokeWidth={1.5}
+                                    src="/lock.png"
+                                    alt="Secure Lock"
+                                    fill
+                                    className="object-contain relative z-10"
                                 />
                             </div>
                         </div>
@@ -162,20 +162,16 @@ const BusinessExcellence = () => {
                     </div>
 
                     {/* 4. Centralized Governance - (1x1) Placed below Standardized */}
-                    <div className="bento-card col-span-1 md:col-span-1 row-span-1 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                        <div className="flex justify-center py-2" ref={governanceRef}>
+                    <div className="bento-card col-span-1 md:col-span-1 row-span-1 bg-white dark:bg-slate-800 rounded-3xl px-8 pb-8 pt-4 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div className="flex justify-center" ref={governanceRef}>
                             {/* Visualizing Hierarchy */}
-                            <div className="flex flex-col items-center gap-2">
-                                <div className="node w-4 h-4 rounded-full bg-slate-800 dark:bg-white"></div>
-                                <div className="flex gap-4">
-                                    <div className="node w-3 h-3 rounded-full bg-slate-400"></div>
-                                    <div className="node w-3 h-3 rounded-full bg-slate-400"></div>
-                                    <div className="node w-3 h-3 rounded-full bg-slate-400"></div>
-                                </div>
-                                <div className="flex gap-8">
-                                    <div className="node w-2 h-2 rounded-full bg-slate-300"></div>
-                                    <div className="node w-2 h-2 rounded-full bg-slate-300"></div>
-                                </div>
+                            <div className="relative w-48 h-32">
+                                <Image
+                                    src="/drops.png"
+                                    alt="Centralized Governance"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                         </div>
                         <div>
