@@ -7,6 +7,7 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
 import BusinessExcellence from '@/components/BusinessExcellence';
+import Footer from '@/components/Footer';
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -101,11 +102,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center text-sm text-slate-600 dark:text-slate-400">
-          <p>Built with Next.js, Tailwind CSS, and TypeScript</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

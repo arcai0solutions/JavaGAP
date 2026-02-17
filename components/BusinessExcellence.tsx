@@ -102,7 +102,7 @@ const BusinessExcellence = () => {
         <section className="pt-10 pb-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-900" ref={containerRef}>
             <div className="max-w-7xl mx-auto">
                 <div className="mb-12">
-                    <h2 className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-slate-900 dark:text-white">
                         Why JavaGAP
                     </h2>
                 </div>

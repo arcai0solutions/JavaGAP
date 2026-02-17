@@ -45,7 +45,7 @@ export default function Services() {
 
                 {/* Header Section */}
                 <div className="w-full space-y-8">
-                    <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 font-['Neospeed'] -translate-y-8">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white mb-6 -translate-y-8">
                         Services
                     </h2>
                     <p className="text-[#F5F5F5]/40 text-lg leading-relaxed max-w-2xl">

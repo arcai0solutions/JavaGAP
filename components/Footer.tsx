@@ -1,0 +1,123 @@
+import React from 'react';
+import { Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function Footer() {
+    const links = [
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/about' },
+        { label: 'Services', href: '/services' },
+        { label: 'How We Work', href: '/how-we-work' },
+        { label: 'Contact', href: '/contact' },
+    ];
+
+    return (
+        <footer className="relative m-4 rounded-[2rem] overflow-hidden min-h-[400px] flex flex-col justify-between">
+            {/* Video Background */}
+            <video
+                className="absolute top-0 left-0 w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+            >
+                <source src="/footer.mp4" type="video/mp4" />
+            </video>
+
+            {/* Dark Overlay - Darkened as requested */}
+            <div className="absolute inset-0 bg-black/80 pointer-events-none" />
+
+            {/* Content */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 flex flex-col justify-between h-full gap-12 flex-grow">
+
+                {/* Top Section: Logo/Desc, Contact & Links */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pt-8">
+                    {/* 1. Logo & Description */}
+                    <div className="space-y-6 lg:col-span-1">
+                        <div className="bg-white p-2 rounded-xl w-fit">
+                            <Image
+                                src="/java-logo.jpeg"
+                                alt="Java Gap"
+                                width={120}
+                                height={40}
+                                className="h-10 w-auto object-contain"
+                            />
+                        </div>
+                        <p className="text-white text-lg leading-relaxed">
+                            Global Delivery for Tech & Professional Services.
+                            Structured professional services and managed operational support for overseas clients.
+                        </p>
+                    </div>
+
+                    {/* 2. Contact Details (Takes 2 Columns on large screens) */}
+                    <div className="space-y-4">
+                        <h3 className="text-white font-semibold text-lg mb-2">Our Office</h3>
+                        <address className="text-white not-italic space-y-2">
+                            <p>Java Global Access Platform FZ-LLC, FDBC4722</p>
+                            <p>Compass Building, Al Shohada Road,</p>
+                            <p>AL Hamra Industrial Zone-FZ,</p>
+                            <p>Ras Al Khaimah, United Arab Emirates.</p>
+                            <div className="pt-4 space-y-1">
+                                <p>Tel : +971568226844</p>
+                                <p>Fax : +971565439655</p>
+                                <p>Email : info@javagap.ae</p>
+                            </div>
+                        </address>
+                    </div>
+
+                    {/* 3. Navigation Links */}
+                    <nav className="flex flex-col gap-4 lg:ml-32">
+                        <h3 className="text-white font-semibold text-lg mb-2">Pages</h3>
+                        {links.map((link) => (
+                            <Link
+                                key={link.label}
+                                href={link.href}
+                                className="text-white hover:text-white/80 transition-colors duration-200"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
+
+                {/* Bottom Section: Socials & Credits */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/20 pt-8 mt-auto">
+
+                    {/* Social Icons */}
+                    <div className="flex gap-4">
+                        <Link href="#" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                            <Instagram className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                        </Link>
+                        <Link href="#" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                            <Facebook className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                        </Link>
+                        <Link href="#" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                            <Youtube className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                        </Link>
+                        <Link href="#" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                            <Linkedin className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                        </Link>
+                    </div>
+
+                    {/* Credits */}
+                    <div className="flex flex-col md:flex-row items-center gap-4 text-white text-sm font-light">
+                        <div className="flex items-center gap-1">
+                            <span>Designed by</span>
+                            <div className="relative w-28 h-10 translate-y-1">
+                                <Image
+                                    src="/arc-logo.png"
+                                    alt="ARC AI"
+                                    fill
+                                    className="object-contain hover:opacity-100 transition-opacity"
+                                />
+                            </div>
+                        </div>
+                        <span className="hidden md:block text-white">|</span>
+                        <span>Powered by Next.js</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+}
