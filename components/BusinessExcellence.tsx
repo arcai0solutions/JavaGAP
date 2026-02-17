@@ -196,10 +196,10 @@ const BusinessExcellence = () => {
                             <div className="relative w-48 h-48">
                                 <Image
                                     ref={shippingImageRef}
-                                    src="/shippinng.webp"
+                                    src="/shipping.png"
                                     alt="Global Shipping"
                                     fill
-                                    className="object-contain"
+                                    className="object-contain scale-125"
                                 />
                             </div>
                         </div>
