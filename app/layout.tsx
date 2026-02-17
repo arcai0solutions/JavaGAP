@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: 'Java Global Access',
     images: [
       {
-        url: '/share-img.jpg',
+        url: '/share-img.png',
         width: 1200,
         height: 630,
         alt: 'Java Global Access Platform',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Java Global Access - Global Delivery for Tech & Professional Services',
     description: 'Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients.',
-    images: ['/share-img.jpg'],
+    images: ['/share-img.png'],
   },
 };
 
