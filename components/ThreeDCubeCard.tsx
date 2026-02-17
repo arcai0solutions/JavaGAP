@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TrendingUp, Clock } from 'lucide-react';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,11 +73,15 @@ const ThreeDCubeCard = () => {
                 {/* Top Content: Logo and Year */}
                 {/* Top Content: Logo */}
                 <div className="flex justify-between items-start">
-                    <img
-                        src="/java-logo.jpeg"
-                        alt="Java Global Access Logo"
-                        className="h-12 w-auto object-contain rounded-lg"
-                    />
+                    <div className="relative h-12 w-auto">
+                        <Image
+                            src="/java-logo.jpeg"
+                            alt="Java Global Access Logo"
+                            className="object-contain rounded-lg"
+                            height={48}
+                            width={100}
+                        />
+                    </div>
                 </div>
 
                 {/* Middle: 3D Cube */}
@@ -86,22 +91,22 @@ const ThreeDCubeCard = () => {
                     The HTML provided `srcset` images. I'll use the `src` from the HTML. 
                 */}
                         <div className="cube-face front">
-                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Front" />
+                            <Image src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Front" fill />
                         </div>
                         <div className="cube-face back">
-                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Back" />
+                            <Image src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Back" fill />
                         </div>
                         <div className="cube-face right">
-                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Right" />
+                            <Image src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Right" fill />
                         </div>
                         <div className="cube-face left">
-                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Left" />
+                            <Image src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Left" fill />
                         </div>
                         <div className="cube-face top">
-                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Top" />
+                            <Image src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Top" fill />
                         </div>
                         <div className="cube-face bottom">
-                            <img src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Bottom" />
+                            <Image src="/cubes_blue_theme.png" className="w-full h-full object-cover" alt="Bottom" fill />
                         </div>
                     </div>
                 </div>

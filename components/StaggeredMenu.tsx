@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 
 export interface StaggeredMenuItem {
     label: string;
@@ -409,7 +412,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 >
                     <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
                         {displayLogo && (
-                            <img
+                            <Image
                                 src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
                                 alt="Logo"
                                 className="sm-logo-img block h-8 w-auto object-contain"
