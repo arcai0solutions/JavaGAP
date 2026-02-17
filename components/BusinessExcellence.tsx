@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ClipboardList, Globe } from 'lucide-react';
+
 import ThreeDCubeCard from './ThreeDCubeCard';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +14,7 @@ const BusinessExcellence = () => {
 
     // Refs for animation elements
     const lockRef = useRef<HTMLImageElement>(null);
-    const workflowRef = useRef<SVGSVGElement>(null);
+    const workflowRef = useRef<HTMLImageElement>(null);
     const governanceRef = useRef<HTMLDivElement>(null);
     const shippingImageRef = useRef<HTMLImageElement>(null);
 
@@ -149,10 +149,16 @@ const BusinessExcellence = () => {
                     </div>
 
                     {/* 3. Standardized Delivery - (1x1) */}
-                    <div className="bento-card col-span-1 md:col-span-1 row-span-1 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div className="bento-card col-span-1 md:col-span-1 row-span-1 bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div className="flex justify-end">
-                            <div className="p-3 bg-blue-50 dark:bg-slate-700 rounded-full">
-                                <ClipboardList ref={workflowRef} className="w-8 h-8 text-blue-500" />
+                            <div className="relative w-20 h-20">
+                                <Image
+                                    ref={workflowRef}
+                                    src="/clip-board.png"
+                                    alt="Standardized Delivery"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                         </div>
                         <div>
@@ -183,7 +189,7 @@ const BusinessExcellence = () => {
                     {/* 5. International Orientation - (2x1) Placed at bottom right */}
                     <div className="bento-card col-span-1 md:col-span-2 row-span-1 bg-black text-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
                         <div className="w-full md:w-1/2 relative z-10">
-                            <Globe className="w-12 h-12 text-blue-400 mb-4 opacity-80" />
+
                             <h3 className="text-2xl font-semibold mb-2">International Orientation</h3>
                             <p className="text-slate-400 text-sm max-w-lg">Designed for diversified overseas markets</p>
                         </div>
