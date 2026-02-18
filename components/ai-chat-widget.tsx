@@ -372,57 +372,75 @@ export function AiChatWidget() {
                             )}
                         </AnimatePresence>
 
-                        {/* Calendar Button */}
-                        <div className={`relative group perspective-[500px] mb-3 ${isOpen ? 'opacity-0 pointer-events-none translate-y-10' : 'opacity-100 translate-y-0'} transition-all duration-500 ease-in-out delay-100`}>
-                            <motion.button
-                                onClick={handleCalendarClick}
-                                whileHover={{ scale: 1.1, rotateY: 10, rotateX: -10 }}
-                                whileTap={{ scale: 0.9 }}
-                                className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-gradient-to-br from-[#3B82F6] via-[#2563EB] to-[#1D4ED8] text-white flex items-center justify-center transition-all duration-500 relative overflow-hidden group border-2 border-white/20 shadow-lg"
-                                style={{
-                                    boxShadow: "0 10px 25px -5px rgba(37, 99, 235, 0.5), inset 0 4px 10px rgba(255, 255, 255, 0.4), inset 0 -4px 10px rgba(0, 0, 0, 0.2)"
-                                }}
-                            >
-                                {/* Shine effect */}
-                                <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-full pointer-events-none" />
-                                <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-tl from-black/10 to-transparent rounded-br-full pointer-events-none" />
+                        <AnimatePresence>
+                            {!isOpen && (
+                                <>
+                                    {/* Calendar Button */}
+                                    <motion.div
+                                        key="calendar-btn"
+                                        initial={{ opacity: 0, y: 20, height: 0, marginBottom: 0 }}
+                                        animate={{ opacity: 1, y: 0, height: "auto", marginBottom: 12, transition: { delay: 0.1 } }}
+                                        exit={{ opacity: 0, y: 20, height: 0, marginBottom: 0 }}
+                                        className="relative group perspective-[500px]"
+                                    >
+                                        <motion.button
+                                            onClick={handleCalendarClick}
+                                            whileHover={{ scale: 1.1, rotateY: 10, rotateX: -10 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-gradient-to-br from-[#3B82F6] via-[#2563EB] to-[#1D4ED8] text-white flex items-center justify-center transition-all duration-500 relative overflow-hidden group border-2 border-white/20 shadow-lg"
+                                            style={{
+                                                boxShadow: "0 10px 25px -5px rgba(37, 99, 235, 0.5), inset 0 4px 10px rgba(255, 255, 255, 0.4), inset 0 -4px 10px rgba(0, 0, 0, 0.2)"
+                                            }}
+                                        >
+                                            {/* Shine effect */}
+                                            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-full pointer-events-none" />
+                                            <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-tl from-black/10 to-transparent rounded-br-full pointer-events-none" />
 
-                                <Calendar className="w-7 h-7 md:w-8 md:h-8 drop-shadow-md text-white" />
-                            </motion.button>
+                                            <Calendar className="w-7 h-7 md:w-8 md:h-8 drop-shadow-md text-white" />
+                                        </motion.button>
 
-                            {/* Tooltip */}
-                            <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-white text-black text-xs font-bold rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
-                                Book a Meeting
-                                <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45"></div>
-                            </div>
-                        </div>
+                                        {/* Tooltip */}
+                                        <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-white text-black text-xs font-bold rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+                                            Book a Meeting
+                                            <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45"></div>
+                                        </div>
+                                    </motion.div>
 
-                        {/* WhatsApp Button */}
-                        <div className={`relative group perspective-[500px] mb-3 ${isOpen ? 'opacity-0 pointer-events-none translate-y-10' : 'opacity-100 translate-y-0'} transition-all duration-500 ease-in-out`}>
-                            <motion.a
-                                href="https://wa.me/971565439655"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.1, rotateY: 10, rotateX: -10 }}
-                                whileTap={{ scale: 0.9 }}
-                                className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-gradient-to-br from-[#25D366] via-[#128C7E] to-[#075E54] text-white flex items-center justify-center transition-all duration-500 relative overflow-hidden group border-2 border-white/20 shadow-lg"
-                                style={{
-                                    boxShadow: "0 10px 25px -5px rgba(37, 211, 102, 0.5), inset 0 4px 10px rgba(255, 255, 255, 0.4), inset 0 -4px 10px rgba(0, 0, 0, 0.2)"
-                                }}
-                            >
-                                {/* Shine effect */}
-                                <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-full pointer-events-none" />
-                                <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-tl from-black/10 to-transparent rounded-br-full pointer-events-none" />
+                                    {/* WhatsApp Button */}
+                                    <motion.div
+                                        key="whatsapp-btn"
+                                        initial={{ opacity: 0, y: 20, height: 0, marginBottom: 0 }}
+                                        animate={{ opacity: 1, y: 0, height: "auto", marginBottom: 12 }}
+                                        exit={{ opacity: 0, y: 20, height: 0, marginBottom: 0 }}
+                                        className="relative group perspective-[500px]"
+                                    >
+                                        <motion.a
+                                            href="https://wa.me/971565439655"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            whileHover={{ scale: 1.1, rotateY: 10, rotateX: -10 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-gradient-to-br from-[#25D366] via-[#128C7E] to-[#075E54] text-white flex items-center justify-center transition-all duration-500 relative overflow-hidden group border-2 border-white/20 shadow-lg"
+                                            style={{
+                                                boxShadow: "0 10px 25px -5px rgba(37, 211, 102, 0.5), inset 0 4px 10px rgba(255, 255, 255, 0.4), inset 0 -4px 10px rgba(0, 0, 0, 0.2)"
+                                            }}
+                                        >
+                                            {/* Shine effect */}
+                                            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-full pointer-events-none" />
+                                            <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-tl from-black/10 to-transparent rounded-br-full pointer-events-none" />
 
-                                <WhatsAppIcon className="w-7 h-7 md:w-8 md:h-8 drop-shadow-md text-white fill-current" />
-                            </motion.a>
+                                            <WhatsAppIcon className="w-7 h-7 md:w-8 md:h-8 drop-shadow-md text-white fill-current" />
+                                        </motion.a>
 
-                            {/* Tooltip */}
-                            <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-white text-black text-xs font-bold rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
-                                Chat on WhatsApp
-                                <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45"></div>
-                            </div>
-                        </div>
+                                        {/* Tooltip */}
+                                        <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-white text-black text-xs font-bold rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+                                            Chat on WhatsApp
+                                            <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-white transform rotate-45"></div>
+                                        </div>
+                                    </motion.div>
+                                </>
+                            )}
+                        </AnimatePresence>
 
                         {/* 3D Floating Toggle Button */}
                         <div className="relative group perspective-[500px]">
