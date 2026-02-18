@@ -128,7 +128,7 @@ const faqs = [
 export default function FAQ() {
     return (
         <section className="py-24 bg-white text-black">
-            <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+            <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
                 {/* Left Column: Sticky Header & Description */}
                 <div className="lg:col-span-5 lg:sticky lg:top-[35vh] h-fit mb-12 lg:mb-0">
                     <div className="flex items-center gap-2 mb-6">

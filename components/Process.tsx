@@ -35,7 +35,7 @@ const steps = [
 export default function Process() {
     return (
         <div className="py-24 bg-white text-black">
-            <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 {/* Left Column: Fixed Content */}
                 <div className="lg:sticky lg:top-32 h-fit space-y-8">
                     <div className="flex items-center gap-2">
