@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description: 'Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients, backed by disciplined governance, standardized workflows, and scalable delivery teams.',
   keywords: ['Java Global Access', 'Global Delivery', 'Tech Services', 'Professional Services', 'Managed Support', 'JavaGAP', 'Offshore Teams', 'Software Development', 'IT Services'],
   icons: {
-    icon: '/java-favicon.png',
-    apple: '/java-favicon.png',
+    icon: '/javagap-favicon.png',
+    apple: '/javagap-favicon.png',
   },
   openGraph: {
     title: 'Java Global Access - Global Delivery for Tech & Professional Services',
