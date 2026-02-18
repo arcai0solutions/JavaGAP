@@ -12,6 +12,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^3.0.29",
     "@ai-sdk/react": "^3.0.92",
+    "@emailjs/browser": "^4.4.1",
     "@hello-pangea/dnd": "^18.0.1",
     "@hookform/resolvers": "^3.9.0",
     "@netlify/plugin-nextjs": "^5.15.1",

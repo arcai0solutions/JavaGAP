@@ -7,9 +7,37 @@ import Governance from '@/components/Governance';
 import AboutClosing from '@/components/AboutClosing';
 import Footer from '@/components/Footer';
 
+
+export const metadata = {
+    title: "About Us | Java Global Access Platform FZ-LLC",
+    description: "Learn about Java Global Access, our structure, parent company, and governance models ensuring world-class service delivery.",
+    openGraph: {
+        title: "About Us | Java Global Access Platform FZ-LLC",
+        description: "Learn about Java Global Access, our structure, parent company, and governance models ensuring world-class service delivery.",
+        url: "https://javaglobalaccess.com/about",
+        siteName: "Java Global Access Platform FZ-LLC",
+        images: [
+            {
+                url: "/share-img.png",
+                width: 1200,
+                height: 630,
+                alt: "Java Global Access Platform FZ-LLC",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About Us | Java Global Access Platform FZ-LLC",
+        description: "Learn about Java Global Access, our structure, parent company, and governance models ensuring world-class service delivery.",
+        images: ["/share-img.png"],
+    },
+};
+
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-white">
+        <main id="main-content" className="min-h-screen bg-white">
             <AboutHero />
             <GroupStructure />
             <ParentCompany />

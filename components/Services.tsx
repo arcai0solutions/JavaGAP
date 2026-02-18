@@ -48,7 +48,7 @@ export default function Services() {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white mb-6 -translate-y-8">
                         Services
                     </h2>
-                    <p className="text-[#F5F5F5]/40 text-lg leading-relaxed max-w-2xl">
+                    <p className="text-[#F5F5F5]/70 text-lg leading-relaxed max-w-2xl">
                         Digital systems and automation tools are used internally to ensure consistency, quality control, and reporting accuracy.
                     </p>
                 </div>
@@ -68,7 +68,7 @@ export default function Services() {
                                     aria-expanded={isActive}
                                 >
                                     <div className="flex items-center gap-8 md:gap-12">
-                                        <span className={`text-xl font-mono transition-colors duration-300 ${isActive ? 'text-[#00AEEF]' : 'text-[#F5F5F5]/20 group-hover:text-[#F5F5F5]/40'}`}>
+                                        <span className={`text-xl font-mono transition-colors duration-300 ${isActive ? 'text-[#00AEEF]' : 'text-[#F5F5F5]/50 group-hover:text-[#F5F5F5]/70'}`}>
                                             /{String(index + 1).padStart(3, '0')}
                                         </span>
                                         <h3 className={`text-xl sm:text-2xl md:text-3xl font-light tracking-wide transition-colors duration-300 ${isActive ? 'text-white' : 'text-[#F5F5F5] group-hover:text-white'}`}>
@@ -77,7 +77,7 @@ export default function Services() {
                                     </div>
 
                                     <div className={`relative flex items-center justify-center w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 ${isActive ? 'rotate-45' : 'rotate-0'}`}>
-                                        <Plus className={`w-6 h-6 md:w-8 md:h-8 transition-colors duration-300 ${isActive ? 'text-[#00AEEF]' : 'text-[#F5F5F5]/40 group-hover:text-white'}`} strokeWidth={1} />
+                                        <Plus className={`w-6 h-6 md:w-8 md:h-8 transition-colors duration-300 ${isActive ? 'text-[#00AEEF]' : 'text-[#F5F5F5]/70 group-hover:text-white'}`} strokeWidth={1} />
                                     </div>
                                 </button>
 

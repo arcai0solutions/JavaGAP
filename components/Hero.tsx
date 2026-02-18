@@ -85,6 +85,7 @@ export default function Hero() {
                     onEnded={(e) => {
                         e.currentTarget.currentTime = 0;
                     }}
+                    aria-hidden="true"
                 >
                     <source src="/heo.mp4?v=2" type="video/mp4" />
                 </video>

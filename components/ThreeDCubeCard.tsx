@@ -62,6 +62,7 @@ const ThreeDCubeCard = () => {
                     loop
                     muted
                     playsInline
+                    aria-hidden="true"
                 >
                     <source src="https://cdn.prod.website-files.com/68ee74b7102caefef6ce7890%2F68f23d0b14d2158ab1fa8dea_14471915_3840_2160_30fps%20%281%29-transcode.mp4" type="video/mp4" />
                     <source src="https://cdn.prod.website-files.com/68ee74b7102caefef6ce7890%2F68f23d0b14d2158ab1fa8dea_14471915_3840_2160_30fps%20%281%29-transcode.webm" type="video/webm" />

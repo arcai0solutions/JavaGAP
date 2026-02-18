@@ -33,7 +33,7 @@ export default function ManagedServices() {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white mb-8">
                         Managed Services
                     </h2>
-                    <p className="text-xl text-zinc-400 max-w-3xl leading-relaxed">
+                    <p className="text-xl text-zinc-300 max-w-3xl leading-relaxed">
                         Continuous operational support functions delivered through dedicated teams operating under defined service frameworks.
                     </p>
                 </div>
@@ -59,7 +59,7 @@ export default function ManagedServices() {
                                     {service.title}
                                 </h3>
 
-                                <p className="text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors duration-300 flex-grow">
+                                <p className="text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors duration-300 flex-grow">
                                     {service.description}
                                 </p>
                             </div>

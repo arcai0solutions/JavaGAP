@@ -21,6 +21,7 @@ export default function Footer() {
                 loop
                 muted
                 playsInline
+                aria-hidden="true"
             >
                 <source src="/footer.mp4" type="video/mp4" />
             </video>
@@ -49,7 +50,10 @@ export default function Footer() {
                             Structured professional services and managed operational support for overseas clients.
                         </p>
                         <p className="text-white/60 text-sm">
-                            Dubai Company Registration - <br />REGISTRATION NO-0000004082362
+                            Dubai Company Registration - <br />
+                            REGISTRATION NO. 0000004082362<br />
+                            LICENCE NO. 47029062<br />
+                            LICENCE NO. 46001825
                         </p>
                         <p className="text-white/60 text-sm">
                             Sri Lankan Company Registration - <br />PV 00351228
@@ -93,16 +97,16 @@ export default function Footer() {
 
                     {/* Social Icons */}
                     <div className="flex gap-4">
-                        <Link href="#" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                        <Link href="https://www.instagram.com/javagap.ae/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
                             <Instagram className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                         </Link>
-                        <Link href="#" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                        <Link href="#" aria-label="Facebook" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
                             <Facebook className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                         </Link>
-                        <Link href="#" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                        <Link href="#" aria-label="YouTube" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
                             <Youtube className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                         </Link>
-                        <Link href="#" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                        <Link href="#" aria-label="LinkedIn" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
                             <Linkedin className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                         </Link>
                     </div>

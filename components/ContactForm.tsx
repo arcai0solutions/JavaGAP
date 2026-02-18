@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Send, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -28,25 +29,48 @@ export default function ContactForm() {
         setIsSubmitting(true);
 
         try {
-            // 1. Insert into Inquiries
-            const { error: inquiryError } = await supabase
-                .from('inquiries')
-                .insert([
-                    {
-                        name: formData.name,
-                        email: formData.email,
-                        subject: formData.subject,
-                        message: formData.message,
-                        status: 'new'
-                    }
-                ]);
+            // Email template parameters for EmailJS
+            const emailParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                subject: formData.subject,
+                message: formData.message,
+            };
 
-            if (inquiryError) throw inquiryError;
+            // Run both EmailJS and Supabase submissions in parallel
+            const [emailResult, inquiryResult] = await Promise.allSettled([
+                // 1. Send email via EmailJS
+                emailjs.send(
+                    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+                    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+                    emailParams,
+                    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+                ),
+                // 2. Insert into Supabase Inquiries
+                supabase
+                    .from('inquiries')
+                    .insert([
+                        {
+                            name: formData.name,
+                            email: formData.email,
+                            subject: formData.subject,
+                            message: formData.message,
+                            status: 'new'
+                        }
+                    ])
+            ]);
 
-            // 2. Check and Insert into Contacts (Upsert based on email could be better, but simple check for now)
-            // Ideally we'd use upsert if email is unique, but let's just add if not exists logic can be complex without unique constraint.
-            // For now, let's just add to inquiries. The "Saved to contacts" requirement mentions "autosaves as a contact".
-            // We can do a simple check.
+            // Check Supabase result
+            if (inquiryResult.status === 'fulfilled' && inquiryResult.value.error) {
+                throw inquiryResult.value.error;
+            }
+
+            // Log email result but don't fail the form
+            if (emailResult.status === 'rejected') {
+                console.error('EmailJS error:', emailResult.reason);
+            }
+
+            // 3. Check and Insert into Contacts
             const { data: existingContact } = await supabase
                 .from('contacts')
                 .select('id')

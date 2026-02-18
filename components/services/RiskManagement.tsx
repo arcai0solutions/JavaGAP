@@ -22,7 +22,7 @@ export default function RiskManagement() {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white mb-6">
                         Risk Management
                     </h2>
-                    <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed">
+                    <p className="text-xl text-zinc-300 max-w-2xl leading-relaxed">
                         Key risks are managed through structured controls, standardized processes, and rigorous oversight mechanisms.
                     </p>
                 </div>
@@ -32,9 +32,9 @@ export default function RiskManagement() {
                     {/* Key Risks Area - Spans 7 columns */}
                     <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {risks.map((risk, index) => (
-                            <div key={index} className="group bg-zinc-900/30 border border-white/10 p-8 rounded-[2rem] hover:bg-zinc-900/60 hover:border-white/20 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center ${risk.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                                    <risk.icon size={28} strokeWidth={1.5} />
+                            <div key={index} className="group bg-zinc-900/30 border border-white/10 p-10 rounded-[2rem] hover:bg-zinc-900/60 hover:border-white/20 transition-all duration-500 flex flex-col items-center justify-center text-center min-h-[220px]">
+                                <div className={`w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center ${risk.color} mb-6 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500`}>
+                                    <risk.icon size={30} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-xl font-bold text-white group-hover:text-zinc-200 transition-colors">
                                     {risk.title}
@@ -51,7 +51,7 @@ export default function RiskManagement() {
                                 <ShieldAlert size={180} />
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Mitigation Strategy</h3>
-                            <p className="text-zinc-400 leading-relaxed relative z-10 mb-8">
+                            <p className="text-zinc-300 leading-relaxed relative z-10 mb-8">
                                 Mitigation is achieved through standardized processes, secure systems, and periodic internal reviews. Every operational step consists of multiple checkpoints.
                             </p>
                             <div className="flex items-center gap-2 text-sm text-zinc-500 relative z-10">
@@ -65,7 +65,7 @@ export default function RiskManagement() {
                             <h3 className="text-2xl font-bold text-white mb-6">Internal Policies</h3>
                             <ul className="space-y-4">
                                 {['Financial control & reporting', 'Information security protocols', 'Operational monitoring', 'HR governance'].map((item, index) => (
-                                    <li key={index} className="flex items-center gap-3 text-zinc-400">
+                                    <li key={index} className="flex items-center gap-3 text-zinc-300">
                                         <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                                         {item}
                                     </li>

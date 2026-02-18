@@ -65,7 +65,7 @@ export default function EngagementScope() {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white mb-6">
                         What to send to<br />scope an engagement
                     </h2>
-                    <p className="text-zinc-400 text-lg mb-8 max-w-md">
+                    <p className="text-zinc-300 text-lg mb-8 max-w-md">
                         To help us understand your needs and provide an accurate proposal, please include the following details in your initial request.
                     </p>
 

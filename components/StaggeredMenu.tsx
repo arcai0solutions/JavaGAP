@@ -433,7 +433,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         <Link href="/" className="block flex-shrink-0">
                             <Image
                                 src="/java-global-access-logo.png"
-                                alt="Logo"
+                                alt="Java Global Access"
                                 className="block h-10 w-auto object-contain"
                                 width={110}
                                 height={24}
@@ -452,7 +452,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                             <Link href="/" className="relative z-[200] pointer-events-auto block">
                                 <Image
                                     src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
-                                    alt="Logo"
+                                    alt="Java Global Access"
                                     className="sm-logo-img block h-8 w-auto object-contain cursor-pointer"
                                     draggable={false}
                                     width={110}

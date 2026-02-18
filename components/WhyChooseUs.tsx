@@ -51,16 +51,19 @@ export default function WhyChooseUs() {
 
     return (
         <section ref={containerRef} className="bg-white text-black py-24 sm:py-32 px-6 sm:px-12 lg:px-20 border-t border-zinc-200">
+            <h2 className="sr-only">Why Choose Us</h2>
             <div className="max-w-5xl mx-auto">
-                <p ref={textRef} className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-[1.6] text-zinc-900 text-justify tracking-wide">
-                    {words.map((word, index) => (
-                        <React.Fragment key={index}>
-                            <span className={`word-span inline-block group-${Math.floor(index / 3)}`}>
-                                {word}
-                            </span>
-                            {' '}
-                        </React.Fragment>
-                    ))}
+                <p ref={textRef} aria-label={fullText} className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-[1.6] text-zinc-900 text-justify tracking-wide">
+                    <span aria-hidden="true">
+                        {words.map((word, index) => (
+                            <React.Fragment key={index}>
+                                <span className={`word-span inline-block group-${Math.floor(index / 3)}`}>
+                                    {word}
+                                </span>
+                                {' '}
+                            </React.Fragment>
+                        ))}
+                    </span>
                 </p>
 
 
