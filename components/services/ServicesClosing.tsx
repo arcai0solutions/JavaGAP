@@ -22,19 +22,21 @@ export default function ServicesClosing() {
                         Start Your Engagement
                     </h2>
 
-                    <p className="text-xl text-zinc-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-                        To scope a service engagement, contact us with your required service type, scope summary, timeline, and reporting expectations.
+                    <p className="text-base sm:text-xl text-zinc-600 mb-10 leading-relaxed max-w-2xl mx-auto text-justify sm:text-center">
+                        Ready to begin? Contact us with your required service type, scope summary, timeline, and reporting expectations to initiate your engagement.
                     </p>
 
-                    <Link href="/contact">
-                        <Button
-                            size="lg"
-                            className="bg-[#00AEEF] hover:bg-[#008fca] text-white text-lg h-16 px-10 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(0,174,239,0.3)] hover:shadow-[0_0_30px_rgba(0,174,239,0.5)] group"
-                        >
-                            Request a service discussion
-                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                    </Link>
+                    <div className="flex justify-center">
+                        <Link href="/contact">
+                            <Button
+                                size="lg"
+                                className="bg-[#00AEEF] hover:bg-[#008fca] text-white text-lg h-16 px-10 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(0,174,239,0.3)] hover:shadow-[0_0_30px_rgba(0,174,239,0.5)] group"
+                            >
+                                Request a service discussion
+                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>

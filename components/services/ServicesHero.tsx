@@ -48,7 +48,7 @@ export default function ServicesHero() {
 
             <div className="h-full w-full rounded-[2rem] bg-black overflow-hidden relative">
                 {/* Logo Container */}
-                <div className="absolute left-8 sm:left-12 top-[38px] lg:top-8 bg-white rounded-xl lg:rounded-2xl p-2 z-[60]">
+                <div className="absolute left-8 sm:left-12 top-[38px] lg:top-8 bg-white rounded-xl lg:rounded-2xl p-2 z-[60] hidden lg:block">
                     <Link href="/" className="relative h-10 lg:h-16 w-auto block">
                         <Image
                             src="/java-global-access-logo.png"
@@ -67,7 +67,7 @@ export default function ServicesHero() {
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 font-['Neospeed']">
                         Services
                     </h1>
-                    <p className="text-lg text-slate-200 max-w-3xl leading-relaxed">
+                    <p className="text-lg text-slate-200 max-w-3xl leading-relaxed text-justify sm:text-left">
                         Java Global Access Platform FZ-LLC delivers professional and technology-enabled services on a cross-border basis, exclusively to overseas clients. Our hybrid export services model integrates professional advisory support with ongoing managed service execution.
                     </p>
                 </div>

@@ -420,14 +420,14 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
                 <header
                     className={`staggered-menu-header flex items-center pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${scrolled
-                        ? 'fixed top-4 left-0 right-0 w-[96%] max-w-full mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-4 py-2 lg:px-8 lg:py-3 justify-between z-[9999] lg:top-0 lg:w-full lg:mx-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none lg:rounded-none lg:p-[2em]'
-                        : 'absolute top-0 left-0 w-full p-8 lg:p-[2em] bg-transparent justify-between z-[102]'
+                        ? 'fixed top-4 left-0 right-0 w-[92%] max-w-full mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-4 py-2 lg:px-8 lg:py-3 justify-between z-[9999] lg:top-0 lg:w-full lg:mx-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none lg:rounded-none lg:p-[2em]'
+                        : 'absolute top-6 left-0 right-0 mx-auto w-[92%] bg-white/95 backdrop-blur-md rounded-2xl px-4 py-2 lg:top-0 lg:w-full lg:mx-0 lg:bg-transparent lg:backdrop-blur-none lg:rounded-none lg:p-[2em] justify-between z-[102]'
                         }`}
                     aria-label="Main navigation header"
                 >
                     {/* Floating navbar logo - visible only when scrolled */}
                     <div
-                        className={`flex items-center pointer-events-auto transition-all duration-500 overflow-hidden flex-shrink-0 ${scrolled ? 'opacity-100 max-w-[120px] pl-2 lg:max-w-[120px] lg:opacity-0 lg:p-0' : 'opacity-0 max-w-0 p-0'
+                        className={`flex items-center pointer-events-auto transition-all duration-500 overflow-hidden flex-shrink-0 ${scrolled ? 'opacity-100 max-w-[120px] pl-2 lg:max-w-[120px] lg:opacity-0 lg:p-0' : 'opacity-100 max-w-[120px] pl-2 lg:opacity-0 lg:max-w-0 lg:p-0'
                             }`}
                     >
                         <Link href="/" className="block flex-shrink-0">
@@ -466,8 +466,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         }`}>
                         {/* White Background Bar - hidden when scrolled, but visible on Desktop scroll */}
                         <div
-                            className={`absolute inset-0 bg-white rounded-xl lg:rounded-2xl -z-10 shadow-sm transition-opacity duration-500 ${scrolled ? 'opacity-0 lg:opacity-100' : 'opacity-100'
-                                }`}
+                            className={`absolute inset-0 bg-white rounded-xl lg:rounded-2xl -z-10 shadow-sm transition-opacity duration-500 ${scrolled ? 'opacity-0 lg:opacity-100' : 'opacity-0 lg:opacity-100'}`}
                         />
 
                         <div ref={timeRef} className="text-right hidden sm:block leading-tight transition-colors text-black">

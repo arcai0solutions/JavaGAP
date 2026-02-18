@@ -96,7 +96,7 @@ export default function BuiltInControls() {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
                         Built-in controls
                     </h2>
-                    <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
                         We integrate robust controls directly into our delivery model to ensure consistency, security, and quality at every step of the engagement.
                     </p>
                 </div>
@@ -113,8 +113,8 @@ export default function BuiltInControls() {
 
                             <div className="h-[200px] w-full flex items-center justify-center mb-6 relative z-10">
                                 <div className={`relative control-img ${index === 1 ? 'w-48 h-48' :
-                                        (index === 0 || index === 3) ? 'w-44 h-44' :
-                                            'w-36 h-36'
+                                    (index === 0 || index === 3) ? 'w-44 h-44' :
+                                        'w-36 h-36'
                                     }`}>
                                     <Image
                                         src={item.image}

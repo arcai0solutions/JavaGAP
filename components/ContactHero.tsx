@@ -22,9 +22,9 @@ const socialItems = [
 
 export default function ContactHero() {
     return (
-        <section className="h-[60vh] w-full p-[10px] relative z-[100]">
+        <section className="h-[50vh] sm:h-[60vh] w-full px-[4px] pt-[4px] pb-[10px] sm:p-[10px] relative z-[100]">
             {/* Staggered Menu - Moved outside to prevent clipping */}
-            <div className="absolute inset-[10px] z-50 pointer-events-none">
+            <div className="absolute inset-x-[4px] top-[4px] bottom-[10px] sm:inset-[10px] z-50 pointer-events-none">
                 <div className="w-full h-full">
                     <StaggeredMenu
                         position="right"
@@ -48,7 +48,7 @@ export default function ContactHero() {
             <div className="h-full w-full rounded-[2rem] bg-black overflow-hidden relative">
 
                 {/* Logo Container */}
-                <div className="absolute left-8 sm:left-12 top-[38px] lg:top-8 bg-white rounded-xl lg:rounded-2xl p-2 z-[60]">
+                <div className="absolute left-8 sm:left-12 top-[38px] lg:top-8 bg-white rounded-xl lg:rounded-2xl p-2 z-[60] hidden lg:block">
                     <Link href="/" className="relative h-10 lg:h-16 w-auto block">
                         <Image
                             src="/java-global-access-logo.png"
@@ -66,7 +66,7 @@ export default function ContactHero() {
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 font-['Neospeed']">
                         Get in Touch
                     </h1>
-                    <p className="text-lg text-slate-200 max-w-2xl">
+                    <p className="text-lg text-slate-200 max-w-2xl text-justify sm:text-left">
                         We'd love to hear from you. Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.
                     </p>
                 </div>

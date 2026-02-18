@@ -23,9 +23,9 @@ const socialItems = [
 
 export default function HowItWorksHero() {
     return (
-        <section className="h-[85vh] w-full p-[10px] relative z-[100]">
+        <section className="h-[70vh] sm:h-[85vh] w-full px-[4px] pt-[4px] pb-[10px] sm:p-[10px] relative z-[100]">
             {/* Staggered Menu - Moved outside to prevent clipping */}
-            <div className="absolute inset-[10px] z-50 pointer-events-none">
+            <div className="absolute inset-x-[4px] top-[4px] bottom-[10px] sm:inset-[10px] z-50 pointer-events-none">
                 <div className="w-full h-full">
                     <StaggeredMenu
                         position="right"
@@ -49,7 +49,7 @@ export default function HowItWorksHero() {
             <div className="h-full w-full rounded-[2rem] bg-black overflow-hidden relative">
 
                 {/* Logo Container */}
-                <div className="absolute left-8 sm:left-12 top-[38px] lg:top-8 bg-white rounded-xl lg:rounded-2xl p-2 z-[60]">
+                <div className="absolute left-8 sm:left-12 top-[38px] lg:top-8 bg-white rounded-xl lg:rounded-2xl p-2 z-[60] hidden lg:block">
                     <Link href="/" className="relative h-10 lg:h-16 w-auto block">
                         <Image
                             src="/java-global-access-logo.png"
@@ -66,12 +66,12 @@ export default function HowItWorksHero() {
 
                 {/* Content */}
                 <div className="relative z-10 flex flex-col justify-end h-full px-8 pb-16 sm:px-12 sm:pb-20 max-w-7xl mx-auto w-full">
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8 font-['Neospeed'] leading-[1.1]">
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8 font-['Neospeed'] leading-[1.1]">
                         How cross-border<br />delivery is structured.
                     </h1>
 
                     <div className="flex flex-col lg:flex-row gap-12 lg:items-end justify-between">
-                        <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+                        <p className="text-base sm:text-xl text-slate-300 max-w-2xl leading-relaxed text-justify sm:text-left">
                             Java Global Access Platform FZ-LLC delivers professional and technology-enabled services exclusively to overseas clients through a defined engagement lifecycle. Delivery is managed using standardized workflows, structured supervision, and consistent reporting to support continuity and measurable outcomes.
                         </p>
 

@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
         <section ref={containerRef} className="bg-white text-black py-24 sm:py-32 px-6 sm:px-12 lg:px-20 border-t border-zinc-200">
             <h2 className="sr-only">Why Choose Us</h2>
             <div className="max-w-5xl mx-auto">
-                <p ref={textRef} aria-label={fullText} className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-[1.6] text-zinc-900 text-justify tracking-wide">
+                <p ref={textRef} aria-label={fullText} className="text-xl sm:text-3xl lg:text-4xl font-medium leading-[1.6] text-zinc-900 text-justify tracking-normal sm:tracking-wide">
                     <span aria-hidden="true">
                         {words.map((word, index) => (
                             <React.Fragment key={index}>
@@ -69,9 +69,9 @@ export default function WhyChooseUs() {
 
 
                 {/* Decor images */}
-                <div className="images-container relative mt-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 opacity-0 translate-y-8">
+                <div className="images-container relative mt-8 flex flex-row justify-between md:justify-center items-center gap-4 md:gap-16 opacity-0 translate-y-8">
                     {/* Image 1: Meeting */}
-                    <div className="relative w-64 h-48 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 rotate-[-3deg] hover:rotate-0 hover:z-10">
+                    <div className="relative w-40 h-32 md:w-64 md:h-48 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 rotate-[-3deg] hover:rotate-0 hover:z-10">
                         <Image
                             src="/her1.webp"
                             alt="Dubai Meeting Room"
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     {/* Image 2: Architecture */}
-                    <div className="relative w-64 h-48 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 rotate-[3deg] hover:rotate-0 hover:z-10">
+                    <div className="relative w-40 h-32 md:w-64 md:h-48 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 rotate-[3deg] hover:rotate-0 hover:z-10">
                         <Image
                             src="/her2.webp"
                             alt="Dubai Architecture"

@@ -45,9 +45,8 @@ export default function Footer() {
                                 className="h-10 w-auto object-contain cursor-pointer"
                             />
                         </Link>
-                        <p className="text-white text-lg leading-relaxed">
-                            Global Delivery for Tech & Professional Services.
-                            Structured professional services and managed operational support for overseas clients.
+                        <p className="text-white text-base sm:text-lg leading-relaxed text-justify sm:text-left tracking-tighter sm:tracking-normal">
+                            Global Delivery for Tech & Professional Services. Structured professional services and managed operational support for overseas clients.
                         </p>
                         <p className="text-white/60 text-sm">
                             Dubai Company Registration - <br />

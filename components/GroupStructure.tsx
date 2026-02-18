@@ -72,7 +72,7 @@ export default function GroupStructure() {
                 {/* Text Side */}
                 <div>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-[#00AEEF] mb-8">Group Structure</h2>
-                    <p ref={textRef} className="text-2xl sm:text-3xl font-medium leading-[1.5] text-zinc-900 tracking-wide">
+                    <p ref={textRef} className="text-lg sm:text-3xl font-medium leading-[1.5] text-zinc-900 tracking-normal sm:tracking-wide text-justify sm:text-left">
                         {words.map((word, index) => (
                             <React.Fragment key={index}>
                                 <span className={`inline-block group-struct-${Math.floor(index / 3)} transition-all duration-300`}>
@@ -86,7 +86,7 @@ export default function GroupStructure() {
 
                 {/* Benefits List Side */}
                 <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h3 className="text-xl font-semibold mb-6 text-slate-800">What the group structure enables</h3>
+                    <h3 className="text-2xl font-bold mb-6 text-slate-800 text-center sm:text-left">What the group structure enables</h3>
                     <div ref={listRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {benefits.map((item, index) => (
                             <div key={index} className="flex flex-col items-center text-center gap-2 p-2 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">

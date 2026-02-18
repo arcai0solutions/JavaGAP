@@ -31,9 +31,9 @@ export default function AboutClosing() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-32 px-6 sm:px-12 bg-black text-white text-center flex items-center justify-center min-h-[60vh]">
+        <section ref={containerRef} className="py-32 px-6 sm:px-12 bg-black text-white text-justify sm:text-center flex items-center justify-center min-h-[60vh]">
             <div className="max-w-4xl mx-auto">
-                <h2 ref={textRef} className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
+                <h2 ref={textRef} className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
                     "We are positioned as a scalable export services platform within an established international group structure, supporting operational stability and sustained foreign revenue generation through cross-border service delivery."
                 </h2>
             </div>

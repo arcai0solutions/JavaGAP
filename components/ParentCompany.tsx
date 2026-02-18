@@ -257,7 +257,7 @@ export default function ParentCompany() {
                     >
                         {/* Small Bottom Right Image */}
                         {card.smallImage && (
-                            <div className="absolute bottom-6 right-6 w-48 h-36 rounded-xl overflow-hidden border border-white/20 shadow-2xl z-20">
+                            <div className="absolute bottom-6 right-6 w-48 h-36 rounded-xl overflow-hidden border border-white/20 shadow-2xl z-20 hidden sm:block">
                                 <Image
                                     src={card.smallImage}
                                     alt={card.title}

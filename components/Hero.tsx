@@ -45,7 +45,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="h-screen w-full p-[10px] relative z-[100]">
+        <section className="h-screen w-full px-[4px] pt-[4px] pb-[10px] sm:p-[10px] relative z-[100]">
             {showPreloader && (
                 <Preloader
                     onComplete={handlePreloaderComplete}
@@ -54,7 +54,7 @@ export default function Hero() {
             )}
 
             {/* Staggered Menu - Moved outside to prevent clipping */}
-            <div className="absolute inset-[10px] z-50 pointer-events-none">
+            <div className="absolute inset-x-[4px] top-[4px] bottom-[10px] sm:inset-[10px] z-50 pointer-events-none">
                 <div className="w-full h-full">
                     <StaggeredMenu
                         position="right"
@@ -93,7 +93,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-black/60 pointer-events-none" />
 
                 {/* Logo Container */}
-                <div className="absolute left-8 sm:left-12 top-8 lg:top-8 h-14 lg:h-auto bg-white rounded-xl lg:rounded-2xl p-2 z-[60] flex items-center">
+                <div className="absolute left-8 sm:left-12 top-8 lg:top-8 h-14 lg:h-auto bg-white rounded-xl lg:rounded-2xl p-2 z-[60] hidden lg:flex items-center">
                     <Link href="/" className="relative h-10 lg:h-16 w-auto block">
                         <Image
                             src="/java-global-access-logo.png"
@@ -108,12 +108,12 @@ export default function Hero() {
                     </Link>
                 </div>
 
-                <div className="relative z-10 flex flex-col justify-end h-full px-8 pb-32 sm:px-12 sm:pb-40 max-w-7xl">
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-10 font-['Neospeed']">
-                        Global Delivery for Tech <br /> & Professional Services.
+                <div className="relative z-10 flex flex-col justify-end h-full px-8 pb-40 sm:px-12 sm:pb-40 max-w-7xl">
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-10 font-['Neospeed']">
+                        Global Delivery for Tech &<br /> Professional Services.
                     </h1>
-                    <p className="text-lg text-slate-200 max-w-4xl">
-                        Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients, backed by disciplined governance, standardized workflows, <br /> and scalable delivery teams.
+                    <p className="text-base sm:text-lg text-slate-200 max-w-4xl text-justify sm:text-left">
+                        Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients, backed by disciplined governance, standardized workflows, <br className="hidden sm:inline" /> and scalable delivery teams.
                     </p>
                 </div>
             </div>
