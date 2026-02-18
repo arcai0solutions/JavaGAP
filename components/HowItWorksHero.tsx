@@ -22,34 +22,34 @@ const socialItems = [
 
 export default function HowItWorksHero() {
     return (
-        <section className="h-[85vh] w-full p-[10px]">
+        <section className="h-[85vh] w-full p-[10px] relative z-[100]">
+            {/* Staggered Menu - Moved outside to prevent clipping */}
+            <div className="absolute inset-[10px] z-50 pointer-events-none">
+                <div className="w-full h-full">
+                    <StaggeredMenu
+                        position="right"
+                        items={menuItems}
+                        socialItems={socialItems}
+                        displaySocials
+                        displayItemNumbering={false}
+                        menuButtonColor="#000000"
+                        openMenuButtonColor="#000"
+                        changeMenuColorOnOpen={true}
+                        colors={['#005495', '#00AEEF']}
+                        logoUrl="/java-global-access-logo.png"
+                        accentColor="#00AEEF"
+                        onMenuOpen={() => console.log('Menu opened')}
+                        onMenuClose={() => console.log('Menu closed')}
+                        displayLogo={false}
+                    />
+                </div>
+            </div>
+
             <div className="h-full w-full rounded-[2rem] bg-black overflow-hidden relative">
 
-                {/* Staggered Menu */}
-                <div className="absolute top-0 left-0 w-full h-full z-50 pointer-events-none">
-                    <div className="w-full h-full">
-                        <StaggeredMenu
-                            position="right"
-                            items={menuItems}
-                            socialItems={socialItems}
-                            displaySocials
-                            displayItemNumbering={false}
-                            menuButtonColor="#000000"
-                            openMenuButtonColor="#000"
-                            changeMenuColorOnOpen={true}
-                            colors={['#005495', '#00AEEF']}
-                            logoUrl="/java-global-access-logo.png"
-                            accentColor="#00AEEF"
-                            onMenuOpen={() => console.log('Menu opened')}
-                            onMenuClose={() => console.log('Menu closed')}
-                            displayLogo={false}
-                        />
-                    </div>
-                </div>
-
                 {/* Logo Container */}
-                <div className="absolute left-8 sm:left-12 top-8 bg-white rounded-2xl p-2 z-[60]">
-                    <Link href="/" className="relative h-16 w-auto block">
+                <div className="absolute left-8 sm:left-12 top-[38px] lg:top-8 bg-white rounded-xl lg:rounded-2xl p-2 z-[60]">
+                    <Link href="/" className="relative h-10 lg:h-16 w-auto block">
                         <Image
                             src="/java-global-access-logo.png"
                             alt="Java Gap Logo"

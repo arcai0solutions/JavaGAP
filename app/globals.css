@@ -101,3 +101,51 @@ html {
   scrollbar-width: none;
   /* Firefox */
 }
+
+/* Dashboard Gradient Background */
+.dashboard-gradient {
+  background-image: url('/footer.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #f3f4f6;
+  /* Fallback */
+}
+
+.dark .dashboard-gradient {
+  background-image: url('/footer.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #0f172a;
+  /* Fallback */
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-panel {
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* High-end inputs */
+.glass-input {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}

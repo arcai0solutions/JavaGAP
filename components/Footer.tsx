@@ -60,10 +60,11 @@ export default function Footer() {
                     <div className="space-y-4">
                         <h3 className="text-white font-semibold text-lg mb-2">Our Office</h3>
                         <address className="text-white not-italic space-y-2">
-                            <p>Java Global Access Platform<br /> FZ-LLC,FDBC4722</p>
-                            <p>Compass Building, Al Shohada Road,</p>
+                            <p>Java Global Access Platform FZ-LLC,</p>
+                            <p>FDBC4722, Compass Building, Al Shohada Road,</p>
                             <p>AL Hamra Industrial Zone-FZ,</p>
-                            <p>Ras Al Khaimah, United Arab Emirates.</p>
+                            <p>Ras Al Khaimah,</p>
+                            <p>United Arab Emirates.</p>
                             <div className="pt-4 space-y-1">
                                 <p>Tel : +971568226844</p>
                                 <p>Fax : +971565439655</p>

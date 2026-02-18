@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 const cards = [
     {
@@ -13,6 +14,7 @@ const cards = [
         description:
             'The parent company is a mainland limited liability company incorporated in Dubai, United Arab Emirates, established in 2023.',
         bg: 'bg-zinc-900/50',
+        smallImage: '/images/dubai-skyline.jpg',
     },
     {
         number: '02',
@@ -131,6 +133,18 @@ export default function ParentCompany() {
                                     group overflow-hidden
                                 `}
                             >
+                                {/* Small Bottom Right Image */}
+                                {card.smallImage && (
+                                    <div className="absolute bottom-6 right-6 w-48 h-36 rounded-xl overflow-hidden border border-white/20 shadow-2xl z-20">
+                                        <Image
+                                            src={card.smallImage}
+                                            alt={card.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                    </div>
+                                )}
+
                                 {/* Hover gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#00AEEF]/0 via-transparent to-transparent group-hover:from-[#00AEEF]/10 transition-colors duration-700" />
 
@@ -241,6 +255,18 @@ export default function ParentCompany() {
                             group overflow-hidden
                         `}
                     >
+                        {/* Small Bottom Right Image */}
+                        {card.smallImage && (
+                            <div className="absolute bottom-6 right-6 w-48 h-36 rounded-xl overflow-hidden border border-white/20 shadow-2xl z-20">
+                                <Image
+                                    src={card.smallImage}
+                                    alt={card.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                            </div>
+                        )}
+
                         <div className="absolute inset-0 bg-gradient-to-br from-[#00AEEF]/0 via-transparent to-transparent group-hover:from-[#00AEEF]/10 transition-colors duration-700" />
 
                         <div className="relative z-10 flex flex-col gap-6">

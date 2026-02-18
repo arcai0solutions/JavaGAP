@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 export default function WhyChooseUs() {
     const containerRef = useRef<HTMLElement>(null);
@@ -35,13 +36,21 @@ export default function WhyChooseUs() {
                 );
             }
 
+            // Animate images after text
+            tl.to('.images-container', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power2.out'
+            }, "-=1.0"); // Start 1s before text finishes (overlap)
+
         }, containerRef);
 
         return () => ctx.revert();
     }, [words.length]);
 
     return (
-        <section ref={containerRef} className="bg-white text-black py-32 sm:py-48 px-6 sm:px-12 lg:px-20 border-t border-zinc-200">
+        <section ref={containerRef} className="bg-white text-black py-24 sm:py-32 px-6 sm:px-12 lg:px-20 border-t border-zinc-200">
             <div className="max-w-5xl mx-auto">
                 <p ref={textRef} className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-[1.6] text-zinc-900 text-justify tracking-wide">
                     {words.map((word, index) => (
@@ -53,7 +62,34 @@ export default function WhyChooseUs() {
                         </React.Fragment>
                     ))}
                 </p>
+
+
+
+                {/* Decor images */}
+                <div className="images-container relative mt-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 opacity-0 translate-y-8">
+                    {/* Image 1: Meeting */}
+                    <div className="relative w-64 h-48 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 rotate-[-3deg] hover:rotate-0 hover:z-10">
+                        <Image
+                            src="/her1.webp"
+                            alt="Dubai Meeting Room"
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/10" />
+                    </div>
+
+                    {/* Image 2: Architecture */}
+                    <div className="relative w-64 h-48 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 rotate-[3deg] hover:rotate-0 hover:z-10">
+                        <Image
+                            src="/her2.webp"
+                            alt="Dubai Architecture"
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/10" />
+                    </div>
+                </div>
             </div>
-        </section>
+        </section >
     );
 }

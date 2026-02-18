@@ -6,6 +6,7 @@ import ContactCard from '@/components/ContactCard';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Mail, FileText } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ContactPage() {
     return (
@@ -25,15 +26,27 @@ export default function ContactPage() {
 
                     {/* Right Column: Contact Info & Map */}
                     <div className="space-y-12">
+                        {/* Dubai Architecture Image */}
+                        <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg mb-6">
+                            <Image
+                                src="/images/dubai-architecture.jpg"
+                                alt="Dubai Architecture"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+
                         {/* 3D Contact Cards Grid */}
                         <div className="grid grid-cols-1 gap-6">
                             <ContactCard
                                 icon={MapPin}
                                 title="Our Location"
                                 details={[
-                                    "Compass Building, Al Shohada Road,",
+                                    "Java Global Access Platform FZ-LLC,",
+                                    "FDBC4722, Compass Building, Al Shohada Road,",
                                     "AL Hamra Industrial Zone-FZ,",
-                                    "Ras Al Khaimah, United Arab Emirates."
+                                    "Ras Al Khaimah,",
+                                    "United Arab Emirates."
                                 ]}
                                 delay={100}
                             />

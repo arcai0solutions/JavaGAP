@@ -420,14 +420,14 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
                 <header
                     className={`staggered-menu-header flex items-center pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${scrolled
-                        ? 'fixed top-4 left-0 right-0 w-[98%] max-w-full mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-8 py-3 justify-between z-[9999]'
-                        : 'absolute top-0 left-0 w-full p-[2em] bg-transparent justify-between z-[102]'
+                        ? 'fixed top-4 left-0 right-0 w-[96%] max-w-full mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-4 py-2 lg:px-8 lg:py-3 justify-between z-[9999] lg:top-0 lg:w-full lg:mx-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none lg:rounded-none lg:p-[2em]'
+                        : 'absolute top-0 left-0 w-full p-8 lg:p-[2em] bg-transparent justify-between z-[102]'
                         }`}
                     aria-label="Main navigation header"
                 >
                     {/* Floating navbar logo - visible only when scrolled */}
                     <div
-                        className={`flex items-center pointer-events-auto transition-all duration-500 overflow-hidden flex-shrink-0 ${scrolled ? 'opacity-100 max-w-[120px] pl-2' : 'opacity-0 max-w-0 p-0'
+                        className={`flex items-center pointer-events-auto transition-all duration-500 overflow-hidden flex-shrink-0 ${scrolled ? 'opacity-100 max-w-[120px] pl-2 lg:max-w-[120px] lg:opacity-0 lg:p-0' : 'opacity-0 max-w-0 p-0'
                             }`}
                     >
                         <Link href="/" className="block flex-shrink-0">
@@ -462,11 +462,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                         )}
                     </div>
 
-                    <div className={`flex items-center pointer-events-auto relative transition-all duration-500 ${scrolled ? 'gap-4 pl-4 pr-3 h-20' : 'gap-6 pl-10 pr-6 h-20'
+                    <div className={`flex items-center pointer-events-auto relative transition-all duration-500 ${scrolled ? 'gap-2 pl-2 pr-1 h-14 lg:gap-6 lg:pl-10 lg:pr-6 lg:h-20' : 'gap-1 px-1 h-14 lg:gap-6 lg:pl-10 lg:pr-6 lg:h-20'
                         }`}>
-                        {/* White Background Bar - hidden when scrolled */}
+                        {/* White Background Bar - hidden when scrolled, but visible on Desktop scroll */}
                         <div
-                            className={`absolute inset-0 bg-white rounded-2xl -z-10 shadow-sm transition-opacity duration-500 ${scrolled ? 'opacity-0' : 'opacity-100'
+                            className={`absolute inset-0 bg-white rounded-xl lg:rounded-2xl -z-10 shadow-sm transition-opacity duration-500 ${scrolled ? 'opacity-0 lg:opacity-100' : 'opacity-100'
                                 }`}
                         />
 
@@ -486,16 +486,30 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
                         <button
                             ref={toggleBtnRef}
-                            className={`sm-toggle relative inline-flex items-center justify-center border rounded-full w-14 h-14 bg-transparent cursor-pointer overflow-visible transition-all border-black/20 hover:bg-black/5 ${open ? 'text-black border-black/20' : 'text-black'}`}
+                            className={`sm-toggle relative inline-flex items-center justify-center border rounded-xl lg:rounded-full w-auto px-5 lg:w-14 lg:px-0 h-14 bg-transparent cursor-pointer overflow-visible transition-all border-black/20 hover:bg-black/5 ${open ? 'text-black border-black/20' : 'text-black'}`}
                             aria-label={open ? 'Close menu' : 'Open menu'}
                             aria-expanded={open}
                             aria-controls="staggered-menu-panel"
                             onClick={toggleMenu}
                             type="button"
                         >
+                            <style jsx>{`
+                                @media (max-width: 1023px) {
+                                    .desktop-burger-icon {
+                                        display: none !important;
+                                    }
+                                }
+                            `}</style>
+
+                            {/* Mobile Text "Menu +" */}
+                            <span className="lg:hidden text-black font-bold text-lg tracking-wide">
+                                {open ? 'Close' : 'Menu +'}
+                            </span>
+
+                            {/* Desktop Hamburger Icon */}
                             <span
                                 ref={iconRef}
-                                className="sm-icon relative w-[20px] h-[14px] flex flex-col justify-between items-center"
+                                className="desktop-burger-icon hidden lg:flex relative w-[20px] h-[14px] flex-col justify-between items-center"
                                 aria-hidden="true"
                             >
                                 <span
