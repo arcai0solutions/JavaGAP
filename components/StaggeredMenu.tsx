@@ -2,7 +2,9 @@
 
 import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
+import { Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export interface StaggeredMenuItem {
     label: string;
@@ -77,6 +79,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const busyRef = useRef(false);
 
     const [currentTime, setCurrentTime] = useState('');
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         const updateTime = () => {
@@ -91,6 +94,15 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         updateTime();
         const interval = setInterval(updateTime, 1000);
         return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
@@ -374,11 +386,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     return (
         <div
-            className={`sm-scope z-40 ${isFixed ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden' : 'w-full h-full'}`}
+            className={`sm-scope z-[100] ${isFixed || open ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden' : 'w-full h-full'}`}
         >
             <div
                 className={
-                    (className ? className + ' ' : '') + 'staggered-menu-wrapper pointer-events-none relative w-full h-full z-40'
+                    (className ? className + ' ' : '') + 'staggered-menu-wrapper pointer-events-none relative w-full h-full z-[100]'
                 }
                 style={accentColor ? ({ ['--sm-accent' as any]: accentColor } as React.CSSProperties) : undefined}
                 data-position={position}
@@ -407,45 +419,74 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 </div>
 
                 <header
-                    className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
+                    className={`staggered-menu-header flex items-center pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${scrolled
+                        ? 'fixed top-4 left-0 right-0 w-[95%] max-w-7xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-8 py-3 justify-between z-[9999]'
+                        : 'absolute top-0 left-0 w-full p-[2em] bg-transparent justify-between z-[102]'
+                        }`}
                     aria-label="Main navigation header"
                 >
-                    <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
-                        {displayLogo && (
+                    {/* Floating navbar logo - visible only when scrolled */}
+                    <div
+                        className={`flex items-center pointer-events-auto transition-all duration-500 overflow-hidden flex-shrink-0 ${scrolled ? 'opacity-100 max-w-[120px] pl-2' : 'opacity-0 max-w-0 p-0'
+                            }`}
+                    >
+                        <Link href="/" className="block flex-shrink-0">
                             <Image
-                                src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
+                                src="/java-logo.jpeg"
                                 alt="Logo"
-                                className="sm-logo-img block h-8 w-auto object-contain"
-                                draggable={false}
+                                className="block h-10 w-auto object-contain"
                                 width={110}
                                 height={24}
+                                draggable={false}
                             />
+                        </Link>
+                    </div>
+
+                    {/* Original logo slot - only when not scrolled */}
+                    <div
+                        className={`sm-logo flex items-center select-none pointer-events-auto transition-all duration-500 overflow-hidden ${scrolled ? 'opacity-0 max-w-0' : 'opacity-100 max-w-[200px]'
+                            }`}
+                        aria-label="Logo"
+                    >
+                        {displayLogo && (
+                            <Link href="/" className="relative z-[200] pointer-events-auto block">
+                                <Image
+                                    src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
+                                    alt="Logo"
+                                    className="sm-logo-img block h-8 w-auto object-contain cursor-pointer"
+                                    draggable={false}
+                                    width={110}
+                                    height={24}
+                                />
+                            </Link>
                         )}
                     </div>
 
-                    <div className="flex items-center gap-6 pointer-events-auto relative pl-10 pr-6 h-20">
-                        {/* White Background Bar */}
+                    <div className={`flex items-center pointer-events-auto relative transition-all duration-500 ${scrolled ? 'gap-4 pl-4 pr-3 h-20' : 'gap-6 pl-10 pr-6 h-20'
+                        }`}>
+                        {/* White Background Bar - hidden when scrolled */}
                         <div
-                            className="absolute inset-0 bg-white rounded-2xl -z-10 shadow-sm"
+                            className={`absolute inset-0 bg-white rounded-2xl -z-10 shadow-sm transition-opacity duration-500 ${scrolled ? 'opacity-0' : 'opacity-100'
+                                }`}
                         />
 
                         <div ref={timeRef} className="text-right hidden sm:block leading-tight transition-colors text-black">
-                            <div className="text-lg font-bold">{currentTime}</div>
+                            <div className={`font-bold transition-all duration-500 ${scrolled ? 'text-base' : 'text-lg'}`}>{currentTime}</div>
                         </div>
 
-                        <a
+                        <Link
                             ref={ctaRef}
                             href="/contact"
                             className="hidden sm:inline-flex items-center justify-center px-8 py-3 border-2 rounded-full text-sm font-bold tracking-wider hover:bg-black/5 transition-all border-black text-black relative group overflow-visible"
                             style={{ transitionProperty: 'background-color, color, border-color' }}
                         >
                             <span className="sm-cta-pulse" style={{ borderColor: 'inherit' }}></span>
-                            LET'S TALK
-                        </a>
+                            LET’S TALK
+                        </Link>
 
                         <button
                             ref={toggleBtnRef}
-                            className={`sm-toggle relative inline-flex items-center justify-center border rounded-full w-14 h-14 bg-transparent cursor-pointer overflow-visible transition-colors border-black/20 hover:bg-black/5 ${open ? 'text-black border-black/20' : 'text-black'}`}
+                            className={`sm-toggle relative inline-flex items-center justify-center border rounded-full w-14 h-14 bg-transparent cursor-pointer overflow-visible transition-all border-black/20 hover:bg-black/5 ${open ? 'text-black border-black/20' : 'text-black'}`}
                             aria-label={open ? 'Close menu' : 'Open menu'}
                             aria-expanded={open}
                             aria-controls="staggered-menu-panel"
@@ -462,7 +503,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                                     className="block w-full h-[2px] bg-current rounded-[2px] transform origin-center"
                                 />
                                 <span
-                                    ref={plusHRef} // Middle line
+                                    ref={plusHRef}
                                     className="block w-full h-[2px] bg-current rounded-[2px]"
                                 />
                                 <span
@@ -490,7 +531,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                             {items && items.length ? (
                                 items.map((it, idx) => (
                                     <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
-                                        <a
+                                        <Link
                                             className="sm-panel-item relative text-black font-semibold text-[2.5rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]"
                                             href={it.link}
                                             aria-label={it.ariaLabel}
@@ -499,7 +540,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                                             <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                                                 {it.label}
                                             </span>
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))
                             ) : (
@@ -520,18 +561,28 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                                     className="sm-socials-list list-none m-0 p-0 flex flex-row items-center gap-4 flex-wrap"
                                     role="list"
                                 >
-                                    {socialItems.map((s, i) => (
-                                        <li key={s.label + i} className="sm-socials-item">
-                                            <a
-                                                href={s.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="sm-socials-link text-[1.2rem] font-medium text-[#111] no-underline relative inline-block py-[2px] transition-[color,opacity] duration-300 ease-linear"
-                                            >
-                                                {s.label}
-                                            </a>
-                                        </li>
-                                    ))}
+                                    {socialItems.map((s, i) => {
+                                        const Icon = {
+                                            'Instagram': Instagram,
+                                            'Facebook': Facebook,
+                                            'Youtube': Youtube,
+                                            'Linkedin': Linkedin
+                                        }[s.label] || null;
+
+                                        return (
+                                            <li key={s.label + i} className="sm-socials-item">
+                                                <a
+                                                    href={s.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="sm-socials-link flex items-center justify-center p-3 bg-black/5 hover:bg-black/10 rounded-full transition-all duration-300 group"
+                                                    aria-label={s.label}
+                                                >
+                                                    {Icon && <Icon className="w-5 h-5 text-black/70 group-hover:text-black group-hover:scale-110 transition-transform" />}
+                                                </a>
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </div>
                         )}
@@ -540,8 +591,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             </div>
 
             <style>{`
-.sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; z-index: 40; pointer-events: none; }
-.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 2em; background: transparent; pointer-events: none; z-index: 20; }
+.sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; z-index: 100; pointer-events: none; }
+.sm-scope .staggered-menu-header { display: flex; align-items: center; pointer-events: none; }
 .sm-scope .staggered-menu-header > * { pointer-events: auto; }
 .sm-scope .sm-logo { display: flex; align-items: center; user-select: none; }
 .sm-scope .sm-logo-img { display: block; height: 32px; width: auto; object-fit: contain; }
@@ -555,7 +606,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .sm-panel-itemWrap { position: relative; overflow: hidden; line-height: 1; }
 .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 2px; background: currentColor; border-radius: 2px; transform: translate(-50%, -50%); will-change: transform; }
 .sm-scope .sm-line { display: none !important; }
-.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 38vw, 420px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 10em 2em 2em 2em; overflow-y: auto; z-index: 10; }
+.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 38vw, 420px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 10em 2em 2em 2em; overflow-y: auto; z-index: 101; }
 .sm-scope [data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
 .sm-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(260px, 38vw, 420px); pointer-events: none; z-index: 5; }
 .sm-scope [data-position='left'] .sm-prelayers { right: auto; left: 0; }

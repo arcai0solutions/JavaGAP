@@ -8,7 +8,7 @@ export default function Footer() {
         { label: 'Home', href: '/' },
         { label: 'About', href: '/about' },
         { label: 'Services', href: '/services' },
-        { label: 'How We Work', href: '/how-we-work' },
+        { label: 'How We Work', href: '/how-it-works' },
         { label: 'Contact', href: '/contact' },
     ];
 
@@ -35,15 +35,15 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pt-8">
                     {/* 1. Logo & Description */}
                     <div className="space-y-6 lg:col-span-1">
-                        <div className="bg-white p-2 rounded-xl w-fit">
+                        <Link href="/" className="bg-white p-2 rounded-xl w-fit block hover:opacity-90 transition-opacity relative z-[20]">
                             <Image
                                 src="/java-logo.jpeg"
                                 alt="Java Gap"
                                 width={120}
                                 height={40}
-                                className="h-10 w-auto object-contain"
+                                className="h-10 w-auto object-contain cursor-pointer"
                             />
-                        </div>
+                        </Link>
                         <p className="text-white text-lg leading-relaxed">
                             Global Delivery for Tech & Professional Services.
                             Structured professional services and managed operational support for overseas clients.
@@ -54,7 +54,7 @@ export default function Footer() {
                     <div className="space-y-4">
                         <h3 className="text-white font-semibold text-lg mb-2">Our Office</h3>
                         <address className="text-white not-italic space-y-2">
-                            <p>Java Global Access Platform FZ-LLC, FDBC4722</p>
+                            <p>Java Global Access Platform<br /> FZ-LLC,FDBC4722</p>
                             <p>Compass Building, Al Shohada Road,</p>
                             <p>AL Hamra Industrial Zone-FZ,</p>
                             <p>Ras Al Khaimah, United Arab Emirates.</p>
