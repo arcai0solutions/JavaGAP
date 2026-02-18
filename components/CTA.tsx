@@ -30,7 +30,7 @@ export default function CTA() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-['Neospeed']"
+                            className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white mb-6"
                         >
                             Ready to Scaling <br className="hidden sm:block" /> Without Boundaries?
                         </motion.h2>

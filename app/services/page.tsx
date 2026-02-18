@@ -21,8 +21,7 @@ export default function ServicesPage() {
             <ManagedServices />
             <TechAndDataServices />
 
-            {/* Delivery model section */}
-            <DeliveryLifecycle />
+
 
             <RiskManagement />
             <ServicesClosing />

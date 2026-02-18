@@ -2,7 +2,7 @@
 
 import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Linkedin, Twitter, Github } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -43,7 +43,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     displaySocials = true,
     displayItemNumbering = true,
     className,
-    logoUrl = '/src/assets/logos/reactbits-gh-white.svg',
+    logoUrl = '/java-global-access-logo.png',
     menuButtonColor = '#fff',
     openMenuButtonColor = '#fff',
     changeMenuColorOnOpen = true,
@@ -420,7 +420,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
                 <header
                     className={`staggered-menu-header flex items-center pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${scrolled
-                        ? 'fixed top-4 left-0 right-0 w-[95%] max-w-7xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-8 py-3 justify-between z-[9999]'
+                        ? 'fixed top-4 left-0 right-0 w-[98%] max-w-full mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-8 py-3 justify-between z-[9999]'
                         : 'absolute top-0 left-0 w-full p-[2em] bg-transparent justify-between z-[102]'
                         }`}
                     aria-label="Main navigation header"
@@ -432,7 +432,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     >
                         <Link href="/" className="block flex-shrink-0">
                             <Image
-                                src="/java-logo.jpeg"
+                                src="/java-global-access-logo.png"
                                 alt="Logo"
                                 className="block h-10 w-auto object-contain"
                                 width={110}
@@ -566,7 +566,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                                             'Instagram': Instagram,
                                             'Facebook': Facebook,
                                             'Youtube': Youtube,
-                                            'Linkedin': Linkedin
+                                            'Linkedin': Linkedin,
+                                            'Twitter': Twitter,
+                                            'GitHub': Github
                                         }[s.label] || null;
 
                                         return (

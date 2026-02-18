@@ -22,7 +22,7 @@ const socialItems = [
 
 export default function ServicesHero() {
     return (
-        <section className="h-[80vh] w-full p-[10px]">
+        <section className="h-[60vh] w-full p-[10px]">
             <div className="h-full w-full rounded-[2rem] bg-black overflow-hidden relative">
 
                 {/* Staggered Menu */}
@@ -38,7 +38,7 @@ export default function ServicesHero() {
                             openMenuButtonColor="#000"
                             changeMenuColorOnOpen={true}
                             colors={['#005495', '#00AEEF']}
-                            logoUrl="/java-logo.jpeg"
+                            logoUrl="/java-global-access-logo.png"
                             accentColor="#00AEEF"
                             isFixed
                             onMenuOpen={() => console.log('Menu opened')}
@@ -52,7 +52,7 @@ export default function ServicesHero() {
                 <div className="absolute left-8 sm:left-12 top-8 bg-white rounded-2xl p-2 z-[60]">
                     <Link href="/" className="relative h-16 w-auto block">
                         <Image
-                            src="/java-logo.jpeg"
+                            src="/java-global-access-logo.png"
                             alt="Java Gap Logo"
                             className="object-contain"
                             width={0}

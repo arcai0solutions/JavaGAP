@@ -7,6 +7,7 @@ import BusinessExcellence from '@/components/BusinessExcellence';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import CTA from '@/components/CTA';
+import FAQ from '@/components/FAQ';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <BusinessExcellence />
         <Services />
         <Process />
+        <FAQ />
 
         <CTA />
       </main>

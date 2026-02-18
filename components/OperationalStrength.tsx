@@ -67,7 +67,7 @@ export default function OperationalStrength() {
         <section ref={containerRef} className="py-24 px-6 sm:px-12 bg-white dark:bg-black">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-12 text-center max-w-3xl mx-auto">
-                    <h2 className="text-4xl font-bold mb-4 font-['Neospeed']">Operational Strength</h2>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-4">Operational Strength</h2>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400">
                         Java Global Access Platform FZ-LLC adopts these group-level standards to align with international service expectations from inception.
                     </p>

@@ -71,7 +71,7 @@ export default function GroupStructure() {
 
                 {/* Text Side */}
                 <div>
-                    <h2 className="text-3xl font-bold mb-8 font-['Neospeed'] text-[#00AEEF]">Group Structure</h2>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-[#00AEEF] mb-8">Group Structure</h2>
                     <p ref={textRef} className="text-2xl sm:text-3xl font-medium leading-[1.5] text-zinc-900 tracking-wide">
                         {words.map((word, index) => (
                             <React.Fragment key={index}>

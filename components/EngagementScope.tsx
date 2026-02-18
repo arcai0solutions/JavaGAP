@@ -62,7 +62,7 @@ export default function EngagementScope() {
             <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 <div>
-                    <h2 className="text-4xl sm:text-5xl font-bold mb-6 font-['Neospeed'] text-white">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white mb-6">
                         What to send to<br />scope an engagement
                     </h2>
                     <p className="text-zinc-400 text-lg mb-8 max-w-md">

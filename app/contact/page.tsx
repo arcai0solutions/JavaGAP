@@ -4,7 +4,7 @@ import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import ContactCard from '@/components/ContactCard';
 import { Button } from '@/components/ui/button';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, FileText } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ContactPage() {
@@ -16,7 +16,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
                     {/* Left Column: Contact Form */}
                     <div>
-                        <h2 className="text-4xl font-bold mb-6 font-['Neospeed']">Send us a Message</h2>
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-6">Send us a Message</h2>
                         <p className="text-gray-600 mb-10 text-lg">
                             Ready to start your next project? Fill out the form below and our team will get back to you within 24 hours.
                         </p>
@@ -59,6 +59,16 @@ export default function ContactPage() {
                                     href: "mailto:info@javagap.ae"
                                 }}
                                 delay={300}
+                            />
+
+                            <ContactCard
+                                icon={FileText}
+                                title="Company Registration"
+                                details={[
+                                    "Dubai Company Registration",
+                                    "REGISTRATION NO.-0000004082362"
+                                ]}
+                                delay={400}
                             />
                         </div>
 

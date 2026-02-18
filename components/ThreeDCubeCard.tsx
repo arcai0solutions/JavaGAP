@@ -75,7 +75,7 @@ const ThreeDCubeCard = () => {
                 <div className="flex justify-between items-start">
                     <div className="relative h-12 w-auto">
                         <Image
-                            src="/java-logo.jpeg"
+                            src="/java-global-access-logo.png"
                             alt="Java Global Access Logo"
                             className="object-contain rounded-lg"
                             height={48}

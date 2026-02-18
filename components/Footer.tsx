@@ -37,7 +37,7 @@ export default function Footer() {
                     <div className="space-y-6 lg:col-span-1">
                         <Link href="/" className="bg-white p-2 rounded-xl w-fit block hover:opacity-90 transition-opacity relative z-[20]">
                             <Image
-                                src="/java-logo.jpeg"
+                                src="/java-global-access-logo.png"
                                 alt="Java Gap"
                                 width={120}
                                 height={40}
@@ -47,6 +47,9 @@ export default function Footer() {
                         <p className="text-white text-lg leading-relaxed">
                             Global Delivery for Tech & Professional Services.
                             Structured professional services and managed operational support for overseas clients.
+                        </p>
+                        <p className="text-white/60 text-sm">
+                            Dubai Company Registration - <br />REGISTRATION NO-0000004082362
                         </p>
                     </div>
 
@@ -104,14 +107,19 @@ export default function Footer() {
                     <div className="flex flex-col md:flex-row items-center gap-4 text-white text-sm font-light">
                         <div className="flex items-center gap-1">
                             <span>Designed by</span>
-                            <div className="relative w-28 h-10 translate-y-1">
+                            <Link
+                                href="https://www.arcai.agency"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative w-28 h-10 translate-y-1 block"
+                            >
                                 <Image
                                     src="/arc-logo.png"
                                     alt="ARC AI"
                                     fill
                                     className="object-contain hover:opacity-100 transition-opacity"
                                 />
-                            </div>
+                            </Link>
                         </div>
                         <span className="hidden md:block text-white">|</span>
                         <span>Powered by Next.js</span>

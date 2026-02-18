@@ -19,7 +19,7 @@ export default function RiskManagement() {
                     <span className="inline-block py-1 px-3 rounded-full bg-red-500/10 text-red-400 text-sm font-semibold tracking-wide uppercase mb-6 border border-red-500/20">
                         Governance & Control
                     </span>
-                    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 font-['Neospeed']">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-white mb-6">
                         Risk Management
                     </h2>
                     <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed">

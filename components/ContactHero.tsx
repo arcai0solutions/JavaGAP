@@ -14,9 +14,10 @@ const menuItems = [
 ];
 
 const socialItems = [
-    { label: 'Twitter', link: 'https://twitter.com' },
-    { label: 'GitHub', link: 'https://github.com' },
-    { label: 'LinkedIn', link: 'https://linkedin.com' }
+    { label: 'Instagram', link: '#' },
+    { label: 'Facebook', link: '#' },
+    { label: 'Youtube', link: '#' },
+    { label: 'Linkedin', link: '#' }
 ];
 
 export default function ContactHero() {
@@ -37,7 +38,7 @@ export default function ContactHero() {
                             openMenuButtonColor="#000"
                             changeMenuColorOnOpen={true}
                             colors={['#005495', '#00AEEF']}
-                            logoUrl="/java-logo.jpeg"
+                            logoUrl="/java-global-access-logo.png"
                             accentColor="#00AEEF"
                             onMenuOpen={() => console.log('Menu opened')}
                             onMenuClose={() => console.log('Menu closed')}
@@ -50,7 +51,7 @@ export default function ContactHero() {
                 <div className="absolute left-8 sm:left-12 top-8 bg-white rounded-2xl p-2 z-[60]">
                     <Link href="/" className="relative h-16 w-auto block">
                         <Image
-                            src="/java-logo.jpeg"
+                            src="/java-global-access-logo.png"
                             alt="Java Gap Logo"
                             className="object-contain"
                             width={0}
