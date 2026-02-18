@@ -51,6 +51,9 @@ export default function Footer() {
                         <p className="text-white/60 text-sm">
                             Dubai Company Registration - <br />REGISTRATION NO-0000004082362
                         </p>
+                        <p className="text-white/60 text-sm">
+                            Sri Lankan Company Registration - <br />PV 00351228
+                        </p>
                     </div>
 
                     {/* 2. Contact Details (Takes 2 Columns on large screens) */}
