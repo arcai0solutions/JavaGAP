@@ -15,9 +15,10 @@ const menuItems = [
 ];
 
 const socialItems = [
-    { label: 'Twitter', link: 'https://twitter.com' },
-    { label: 'GitHub', link: 'https://github.com' },
-    { label: 'LinkedIn', link: 'https://linkedin.com' }
+    { label: 'Instagram', link: 'https://www.instagram.com/javagap.ae/' },
+    { label: 'Facebook', link: 'https://www.facebook.com/share/1DJprGDKoM/?mibextid=wwXIfr' },
+    { label: 'Youtube', link: '#' },
+    { label: 'Linkedin', link: 'https://www.linkedin.com/in/java-global-access-platform-fz-llc-bb392a3b1/' }
 ];
 
 export default function HowItWorksHero() {

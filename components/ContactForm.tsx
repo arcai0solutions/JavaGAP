@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Send, Loader2 } from 'lucide-react';
+import { Send, Loader2, CheckCircle2, ArrowLeft } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
 import emailjs from '@emailjs/browser';
@@ -15,6 +15,8 @@ export default function ContactForm() {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [submittedName, setSubmittedName] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -87,7 +89,8 @@ export default function ContactForm() {
                 ]);
             }
 
-            toast.success('Message sent successfully!');
+            setSubmittedName(formData.name.split(' ')[0]);
+            setIsSubmitted(true);
             setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (error) {
             console.error('Error submitting form:', error);
@@ -96,6 +99,34 @@ export default function ContactForm() {
             setIsSubmitting(false);
         }
     };
+
+    if (isSubmitted) {
+        return (
+            <div className="flex flex-col items-center justify-center text-center py-16 px-6 space-y-6 animate-in fade-in duration-500">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-200/50">
+                    <CheckCircle2 className="w-10 h-10 text-white" />
+                </div>
+                <div className="space-y-3">
+                    <h3 className="text-3xl font-bold text-gray-900">
+                        Thank you{submittedName ? `, ${submittedName}` : ''}!
+                    </h3>
+                    <p className="text-gray-600 text-lg max-w-md leading-relaxed">
+                        Your message has been received. Our team will review your inquiry and get back to you within <strong>24 hours</strong>.
+                    </p>
+                </div>
+                <div className="pt-4">
+                    <Button
+                        onClick={() => setIsSubmitted(false)}
+                        variant="outline"
+                        className="rounded-full px-6 py-5 text-base gap-2 hover:bg-gray-50 transition-all duration-300"
+                    >
+                        <ArrowLeft className="w-4 h-4" />
+                        Send another message
+                    </Button>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
