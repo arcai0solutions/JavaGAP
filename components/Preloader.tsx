@@ -25,7 +25,7 @@ export default function Preloader({ onComplete, videoReady }: PreloaderProps) {
                 clearInterval(typingInterval);
                 setTextComplete(true);
             }
-        }, 50); // Typing speed
+        }, 40); // Typing speed
 
         return () => clearInterval(typingInterval);
     }, []);
@@ -34,8 +34,8 @@ export default function Preloader({ onComplete, videoReady }: PreloaderProps) {
         if (textComplete && videoReady) {
             const timer = setTimeout(() => {
                 setShouldExit(true);
-                setTimeout(onComplete, 1000);
-            }, 1000);
+                setTimeout(onComplete, 800);
+            }, 500);
             return () => clearTimeout(timer);
         }
     }, [textComplete, videoReady, onComplete]);
