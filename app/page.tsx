@@ -11,21 +11,21 @@ import FAQ from '@/components/FAQ';
 
 
 export const metadata = {
-  title: "Home | Java Global Access Platform FZ-LLC",
-  description: "Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients.",
-  keywords: ["Java Global Access", "Global Delivery", "Tech Services", "Professional Services", "Managed Support"],
+  title: "Java Global Access | Your Global Delivery Partner",
+  description: "Java Global Access Platform (JavaGAP) delivers structured professional services, managed operational support, and scalable delivery teams for overseas clients — backed by disciplined governance and standardized workflows.",
+  keywords: ["Java Global Access", "Global Delivery", "Tech Services", "Professional Services", "Managed Support", "JavaGAP", "Offshore Teams"],
   authors: [{ name: "Java Global Access" }],
   openGraph: {
-    title: "Home | Java Global Access Platform FZ-LLC",
-    description: "Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients.",
+    title: "Java Global Access | Your Global Delivery Partner",
+    description: "Structured professional services, managed operational support, and scalable delivery teams for overseas clients — backed by disciplined governance and standardized workflows.",
     url: "https://javaglobalaccess.com",
-    siteName: "Java Global Access Platform FZ-LLC",
+    siteName: "Java Global Access",
     images: [
       {
-        url: "/share-img.png",
+        url: "/new-shareable-img.png",
         width: 1200,
         height: 630,
-        alt: "Java Global Access Platform FZ-LLC",
+        alt: "Java Global Access — Your Global Delivery Partner",
       },
     ],
     locale: "en_US",
@@ -33,9 +33,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Home | Java Global Access Platform FZ-LLC",
-    description: "Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients.",
-    images: ["/share-img.png"],
+    title: "Java Global Access | Your Global Delivery Partner",
+    description: "Structured professional services, managed operational support, and scalable delivery teams for overseas clients — backed by disciplined governance and standardized workflows.",
+    images: ["/new-shareable-img.png"],
   },
 };
 

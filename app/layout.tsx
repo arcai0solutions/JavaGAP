@@ -6,24 +6,24 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Java Global Access - Global Delivery for Tech & Professional Services',
-  description: 'Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients, backed by disciplined governance, standardized workflows, and scalable delivery teams.',
+  title: 'Java Global Access | Global Delivery for Tech & Professional Services',
+  description: 'Java Global Access Platform (JavaGAP) delivers structured professional services, managed operational support, and scalable delivery teams for overseas clients — backed by disciplined governance and standardized workflows.',
   keywords: ['Java Global Access', 'Global Delivery', 'Tech Services', 'Professional Services', 'Managed Support', 'JavaGAP', 'Offshore Teams', 'Software Development', 'IT Services'],
   icons: {
     icon: '/javagap-favicon.png',
     apple: '/javagap-favicon.png',
   },
   openGraph: {
-    title: 'Java Global Access - Global Delivery for Tech & Professional Services',
-    description: 'Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients.',
+    title: 'Java Global Access | Global Delivery for Tech & Professional Services',
+    description: 'Structured professional services, managed operational support, and scalable delivery teams for overseas clients — backed by disciplined governance and standardized workflows.',
     url: 'https://javaglobalaccess.com',
     siteName: 'Java Global Access',
     images: [
       {
-        url: '/share-img.png',
+        url: '/new-shareable-img.png',
         width: 1200,
         height: 630,
-        alt: 'Java Global Access Platform',
+        alt: 'Java Global Access — Your Global Delivery Partner',
       },
     ],
     locale: 'en_US',
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Java Global Access - Global Delivery for Tech & Professional Services',
-    description: 'Java Global Access Platform (JavaGAP) provides structured professional services and managed operational support for overseas clients.',
-    images: ['/share-img.png'],
+    title: 'Java Global Access | Global Delivery for Tech & Professional Services',
+    description: 'Structured professional services, managed operational support, and scalable delivery teams for overseas clients — backed by disciplined governance and standardized workflows.',
+    images: ['/new-shareable-img.png'],
   },
 };
 
