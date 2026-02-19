@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "Java Global Access",
     images: [
       {
-        url: "/new-shareable-img.png",
+        url: "/new-shareable-img.jpg",
         width: 1200,
         height: 630,
         alt: "Java Global Access — Your Global Delivery Partner",
@@ -35,7 +35,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Java Global Access | Your Global Delivery Partner",
     description: "Structured professional services, managed operational support, and scalable delivery teams for overseas clients — backed by disciplined governance and standardized workflows.",
-    images: ["/new-shareable-img.png"],
+    images: ["/new-shareable-img.jpg"],
   },
 };
 
