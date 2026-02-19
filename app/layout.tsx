@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://javaglobalaccess.com'),
   title: 'Java Global Access | Global Delivery for Tech & Professional Services',
   description: 'Java Global Access Platform (JavaGAP) delivers structured professional services, managed operational support, and scalable delivery teams for overseas clients — backed by disciplined governance and standardized workflows.',
   keywords: ['Java Global Access', 'Global Delivery', 'Tech Services', 'Professional Services', 'Managed Support', 'JavaGAP', 'Offshore Teams', 'Software Development', 'IT Services'],

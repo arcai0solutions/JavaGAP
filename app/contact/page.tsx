@@ -19,7 +19,7 @@ export const metadata = {
         siteName: "Java Global Access Platform FZ-LLC",
         images: [
             {
-                url: "/share-img.png",
+                url: "/new-shareable-img.png",
                 width: 1200,
                 height: 630,
                 alt: "Java Global Access Platform FZ-LLC",
@@ -32,7 +32,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Contact Us | Java Global Access Platform FZ-LLC",
         description: "Get in touch with our team for your next project. We are ready to assist you with our global delivery solutions.",
-        images: ["/share-img.png"],
+        images: ["/new-shareable-img.png"],
     },
 };
 
