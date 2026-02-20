@@ -102,7 +102,7 @@ export default function Footer() {
                         <Link href="https://www.facebook.com/share/1DJprGDKoM/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
                             <Facebook className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                         </Link>
-                        <Link href="#" aria-label="YouTube" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
+                        <Link href="https://youtube.com/@javaglobalaccessplatformfz-llc" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
                             <Youtube className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                         </Link>
                         <Link href="https://www.linkedin.com/in/java-global-access-platform-fz-llc-bb392a3b1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 group">
