@@ -117,7 +117,7 @@ export default function Hero() {
                     </p>
 
                     {/* Service Cards */}
-                    <div className="grid grid-cols-2 gap-1 mt-16 z-20 lg:absolute lg:-right-36 lg:bottom-40 lg:flex lg:flex-col lg:items-end lg:space-y-4 lg:mt-0 lg:gap-0">
+                    <div className="grid grid-cols-2 gap-1 mt-16 z-20 lg:absolute lg:-right-36 lg:bottom-24 lg:flex lg:flex-col lg:items-end lg:space-y-4 lg:mt-0 lg:gap-0">
 
                         {/* Card 1: Business Operations */}
                         <div className="relative group w-full lg:w-[320px] lg:mr-24 transform hover:-translate-x-2 transition-transform duration-300">
