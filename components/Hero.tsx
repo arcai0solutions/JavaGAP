@@ -117,47 +117,47 @@ export default function Hero() {
                     </p>
 
                     {/* Service Cards */}
-                    <div className="grid grid-cols-2 gap-1 mt-16 z-20 lg:absolute lg:-right-36 lg:bottom-24 lg:flex lg:flex-col lg:items-end lg:space-y-4 lg:mt-0 lg:gap-0">
+                    <div className="grid grid-cols-2 gap-1 mt-16 z-20 lg:absolute lg:right-4 xl:-right-36 lg:bottom-32 xl:bottom-24 lg:flex lg:flex-col lg:items-end lg:space-y-3 xl:space-y-4 lg:mt-0 lg:gap-0">
 
                         {/* Card 1: Business Operations */}
-                        <div className="relative group w-full lg:w-[320px] lg:mr-24 transform hover:-translate-x-2 transition-transform duration-300">
+                        <div className="relative group w-full lg:w-[270px] xl:w-[320px] lg:mr-12 xl:mr-24 transform hover:-translate-x-2 transition-transform duration-300">
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/40 to-cyan-400/40 rounded-[2rem] blur-md opacity-70 group-hover:opacity-100 transition-opacity"></div>
-                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 p-3 sm:p-5 rounded-[2rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-all h-full sm:h-auto px-6">
-                                <span className="text-white font-medium text-sm sm:text-lg text-center sm:text-left order-2 sm:order-1 whitespace-nowrap">Business Ops</span>
-                                <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white order-1 sm:order-2">
+                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 p-3 sm:p-5 lg:p-4 xl:p-5 rounded-[2rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-4 xl:gap-6 shadow-sm hover:shadow-md transition-all h-full sm:h-auto px-6 lg:px-4 xl:px-6">
+                                <span className="text-white font-medium text-sm sm:text-lg lg:text-base xl:text-lg text-center sm:text-left order-2 sm:order-1 whitespace-nowrap">Business Ops</span>
+                                <div className="w-8 h-8 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 flex items-center justify-center text-white order-1 sm:order-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /><circle cx="12" cy="12" r="3" /></svg>
                                 </div>
                             </div>
                         </div>
 
                         {/* Card 2: IT Systems */}
-                        <div className="relative group w-full lg:w-[340px] lg:mr-8 transform hover:-translate-x-2 transition-transform duration-300">
+                        <div className="relative group w-full lg:w-[290px] xl:w-[340px] lg:mr-4 xl:mr-8 transform hover:-translate-x-2 transition-transform duration-300">
                             <div className="absolute inset-0 bg-gradient-to-r from-sky-500/40 to-blue-600/40 rounded-[2rem] blur-md opacity-70 group-hover:opacity-100 transition-opacity"></div>
-                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 p-3 sm:p-5 rounded-[2rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-all h-full sm:h-auto px-6">
-                                <span className="text-white font-medium text-sm sm:text-lg text-center sm:text-left order-2 sm:order-1 whitespace-nowrap">IT Systems</span>
-                                <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white order-1 sm:order-2">
+                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 p-3 sm:p-5 lg:p-4 xl:p-5 rounded-[2rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-4 xl:gap-6 shadow-sm hover:shadow-md transition-all h-full sm:h-auto px-6 lg:px-4 xl:px-6">
+                                <span className="text-white font-medium text-sm sm:text-lg lg:text-base xl:text-lg text-center sm:text-left order-2 sm:order-1 whitespace-nowrap">IT Systems</span>
+                                <div className="w-8 h-8 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 flex items-center justify-center text-white order-1 sm:order-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2" /><rect width="20" height="8" x="2" y="14" rx="2" ry="2" /><line x1="6" x2="6.01" y1="6" y2="6" /><line x1="6" x2="6.01" y1="18" y2="18" /></svg>
                                 </div>
                             </div>
                         </div>
 
                         {/* Card 3: Tech Consulting */}
-                        <div className="relative group w-full lg:w-[360px] lg:mr-0 transform hover:-translate-x-2 transition-transform duration-300">
+                        <div className="relative group w-full lg:w-[310px] xl:w-[360px] lg:mr-0 transform hover:-translate-x-2 transition-transform duration-300">
                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/40 to-teal-500/40 rounded-[2rem] blur-md opacity-70 group-hover:opacity-100 transition-opacity"></div>
-                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 p-3 sm:p-5 rounded-[2rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-all h-full sm:h-auto px-6">
-                                <span className="text-white font-medium text-sm sm:text-lg text-center sm:text-left order-2 sm:order-1 whitespace-nowrap">Tech Consulting</span>
-                                <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white order-1 sm:order-2">
+                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 p-3 sm:p-5 lg:p-4 xl:p-5 rounded-[2rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-4 xl:gap-6 shadow-sm hover:shadow-md transition-all h-full sm:h-auto px-6 lg:px-4 xl:px-6">
+                                <span className="text-white font-medium text-sm sm:text-lg lg:text-base xl:text-lg text-center sm:text-left order-2 sm:order-1 whitespace-nowrap">Tech Consulting</span>
+                                <div className="w-8 h-8 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 flex items-center justify-center text-white order-1 sm:order-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><line x1="16" x2="8" y1="13" y2="13" /><line x1="16" x2="8" y1="17" y2="17" /><line x1="10" x2="8" y1="9" y2="9" /></svg>
                                 </div>
                             </div>
                         </div>
 
                         {/* Card 4: App Development */}
-                        <div className="relative group w-full lg:w-[340px] lg:mr-10 transform hover:-translate-x-2 transition-transform duration-300">
+                        <div className="relative group w-full lg:w-[290px] xl:w-[340px] lg:mr-6 xl:mr-10 transform hover:-translate-x-2 transition-transform duration-300">
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-400/40 to-indigo-500/40 rounded-[2rem] blur-md opacity-70 group-hover:opacity-100 transition-opacity"></div>
-                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 p-3 sm:p-5 rounded-[2rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-all h-full sm:h-auto px-6">
-                                <span className="text-white font-medium text-sm sm:text-lg text-center sm:text-left order-2 sm:order-1 whitespace-nowrap">App Development</span>
-                                <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white order-1 sm:order-2">
+                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 p-3 sm:p-5 lg:p-4 xl:p-5 rounded-[2rem] flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-4 xl:gap-6 shadow-sm hover:shadow-md transition-all h-full sm:h-auto px-6 lg:px-4 xl:px-6">
+                                <span className="text-white font-medium text-sm sm:text-lg lg:text-base xl:text-lg text-center sm:text-left order-2 sm:order-1 whitespace-nowrap">App Development</span>
+                                <div className="w-8 h-8 sm:w-12 sm:h-12 lg:w-10 lg:h-10 xl:w-12 xl:h-12 flex items-center justify-center text-white order-1 sm:order-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg>
                                 </div>
                             </div>
