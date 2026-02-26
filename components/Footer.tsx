@@ -112,22 +112,23 @@ export default function Footer() {
 
                     {/* Credits */}
                     <div className="flex flex-col md:flex-row items-center gap-4 text-white text-sm font-light">
-                        <div className="flex items-center gap-1">
-                            <span>Designed by</span>
-                            <Link
-                                href="https://www.arcai.agency"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="relative w-28 h-10 translate-y-1 block"
-                            >
+                        <Link
+                            href="https://www.arcai.agency"
+                            target="_blank"
+                            rel="noopener"
+                            title="ARC AI - Web Design & Digital Solutions"
+                            className="flex items-center gap-1"
+                        >
+                            <span>Designed &amp; Developed by</span>
+                            <span className="relative w-28 h-10 translate-y-1 block">
                                 <Image
                                     src="/arc-logo.png"
-                                    alt="ARC AI"
+                                    alt="ARC AI - Web Design & Digital Solutions"
                                     fill
-                                    className="object-contain hover:opacity-100 transition-opacity"
+                                    className="object-contain hover:opacity-80 transition-opacity"
                                 />
-                            </Link>
-                        </div>
+                            </span>
+                        </Link>
                         <span className="hidden md:block text-white">|</span>
                         <span>Powered by Next.js</span>
                     </div>
