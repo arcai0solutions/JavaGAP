@@ -92,17 +92,28 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             setCurrentTime(timeString);
         };
         updateTime();
-        const interval = setInterval(updateTime, 1000);
+        const interval = setInterval(updateTime, 30000);
         return () => clearInterval(interval);
     }, []);
 
     useEffect(() => {
+        let rafId = 0;
+        let ticking = false;
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            if (!ticking) {
+                ticking = true;
+                rafId = requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 50);
+                    ticking = false;
+                });
+            }
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            cancelAnimationFrame(rafId);
+        };
     }, []);
 
     const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
@@ -167,7 +178,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         const tl = gsap.timeline({ paused: true });
 
         layerStates.forEach((ls, i) => {
-            tl.fromTo(ls.el, { xPercent: ls.start }, { xPercent: 0, duration: 0.5, ease: 'power4.out' }, i * 0.07);
+            tl.fromTo(ls.el, { xPercent: ls.start }, { xPercent: 0, duration: 0.5, ease: 'power4.out', force3D: true }, i * 0.07);
         });
 
         const lastTime = layerStates.length ? (layerStates.length - 1) * 0.07 : 0;
@@ -177,7 +188,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         tl.fromTo(
             panel,
             { xPercent: panelStart },
-            { xPercent: 0, duration: panelDuration, ease: 'power4.out' },
+            { xPercent: 0, duration: panelDuration, ease: 'power4.out', force3D: true },
             panelInsertTime
         );
 
@@ -187,7 +198,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
             tl.to(
                 itemEls,
-                { yPercent: 0, rotate: 0, duration: 1, ease: 'power4.out', stagger: { each: 0.1, from: 'start' } },
+                { yPercent: 0, rotate: 0, duration: 1, ease: 'power4.out', force3D: true, stagger: { each: 0.1, from: 'start' } },
                 itemsStart
             );
 
@@ -256,6 +267,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
         closeTweenRef.current = gsap.to(all, {
             xPercent: offscreen,
+            force3D: true,
             duration: 0.32,
             ease: 'power3.in',
             overwrite: 'auto',
@@ -398,7 +410,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             >
                 <div
                     ref={preLayersRef}
-                    className="sm-prelayers absolute top-0 right-0 bottom-0 pointer-events-none z-[5]"
+                    className="sm-prelayers absolute top-0 right-0 bottom-0 pointer-events-none z-[5] will-change-transform"
                     aria-hidden="true"
                 >
                     {(() => {
@@ -419,7 +431,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 </div>
 
                 <header
-                    className={`staggered-menu-header flex items-center pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${scrolled
+                    className={`staggered-menu-header flex items-center pointer-events-none transition-all duration-500 ease-in-out ${scrolled
                         ? 'fixed top-4 left-0 right-0 w-[92%] max-w-full mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-4 py-2 lg:px-8 lg:py-3 justify-between z-[9999] lg:top-0 lg:w-full lg:mx-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none lg:rounded-none lg:p-[2em]'
                         : 'absolute top-6 left-0 right-0 mx-auto w-[92%] bg-white/95 backdrop-blur-md rounded-2xl px-4 py-2 lg:top-0 lg:w-full lg:mx-0 lg:bg-transparent lg:backdrop-blur-none lg:rounded-none lg:p-[2em] justify-between z-[102]'
                         }`}
@@ -531,7 +543,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 <aside
                     id="staggered-menu-panel"
                     ref={panelRef}
-                    className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px] pointer-events-auto"
+                    className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px] pointer-events-auto will-change-transform"
                     style={{ WebkitBackdropFilter: 'blur(12px)' }}
                     aria-hidden={!open}
                 >

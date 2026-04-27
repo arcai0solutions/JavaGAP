@@ -4,6 +4,7 @@ import GroupStructure from '@/components/GroupStructure';
 import ParentCompany from '@/components/ParentCompany';
 import BusinessExcellence from '@/components/BusinessExcellence';
 import Governance from '@/components/Governance';
+import CorporateRegistration from '@/components/CorporateRegistration';
 import AboutClosing from '@/components/AboutClosing';
 import Footer from '@/components/Footer';
 
@@ -41,6 +42,7 @@ export default function AboutPage() {
             <AboutHero />
             <GroupStructure />
             <ParentCompany />
+            <CorporateRegistration />
             <BusinessExcellence />
             <Governance />
             <AboutClosing />
