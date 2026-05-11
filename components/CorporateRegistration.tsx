@@ -33,6 +33,15 @@ const registrations = [
             { label: 'Company Registration No.', value: 'PV 00351228' },
         ],
     },
+    {
+        jurisdiction: 'Sri Lanka',
+        subtitle: 'Inland Revenue Department',
+        image: '/new-section/Sri Lanka gvernment.png',
+        details: [
+            { label: 'Betting & Gaming File No.', value: 'BLT - 1047' },
+            { label: 'Taxpayer Identification No. (TIN)', value: '242557670' },
+        ],
+    },
 ];
 
 export default function CorporateRegistration() {
